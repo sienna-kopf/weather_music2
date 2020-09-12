@@ -10,7 +10,11 @@ class WeatherMusicController < ApplicationController
   get "/weather_playlist" do
     location = params[:q]
     weather_response = WeatherService.new.forecast(location)
-    forecast = Forecast.new(weather_response)
-    json_hash = WeatherMusicSerializer.new(forecast).data_hash.to_json
+    if weather_response[:cod] == 200
+      forecast = Forecast.new(weather_response)
+      WeatherMusicSerializer.new(forecast).data_hash.to_json
+    else
+      WeatherMusicSerializer.new.no_response.to_json
+    end
   end
 end
