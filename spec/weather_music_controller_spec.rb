@@ -96,19 +96,21 @@ describe WeatherMusicController do
   end
 
   it "returns an error message if location cannot be found" do
-    location = "aowfufrbjna"
+    VCR.use_cassette('invalid location input') do
+      location = "aowfufrbjna"
 
-    get "/weather_playlist?units=imperial&q=#{location}"
+      get "/weather_playlist?units=imperial&q=#{location}"
 
-    expect(last_response).to be_successful
-    last_response.content_type == "application/json"
+      expect(last_response).to be_successful
+      last_response.content_type == "application/json"
 
-    error = JSON.parse(last_response.body, symbolize_names: true)
+      error = JSON.parse(last_response.body, symbolize_names: true)
 
-    expect(error).to be_a Hash
-    expect(error).to have_key :code
-    expect(error).to have_key :message
-    expect(error[:code]).to eq(404)
-    expect(error[:message]).to eq("city_not_found")
+      expect(error).to be_a Hash
+      expect(error).to have_key :code
+      expect(error).to have_key :message
+      expect(error[:code]).to eq(404)
+      expect(error[:message]).to eq("city_not_found")
+    end 
   end
 end
