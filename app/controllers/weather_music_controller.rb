@@ -4,8 +4,8 @@ Dotenv.load
 
 class WeatherMusicController < ApplicationController
   before do
-     content_type 'application/json'
-   end
+    content_type 'application/json'
+  end
 
   get "/weather_playlist" do
     location = params[:q]
