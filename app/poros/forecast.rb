@@ -4,6 +4,7 @@ class Forecast
               :sunrise_time,
               :sunset_time,
               :description,
+              :icon,
               :temp,
               :temp_min,
               :temp_max,
