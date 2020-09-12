@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=WEATHER_API_KEY&q=denver,%20co,%20usa&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 12 Sep 2020 14:15:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '463'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=denver%2c+co%2c+usa&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-104.98,"lat":39.74},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"stations","main":{"temp":50.38,"feels_like":43.48,"temp_min":46.99,"temp_max":54,"pressure":1021,"humidity":57},"visibility":10000,"wind":{"speed":6.93,"deg":190},"clouds":{"all":20},"dt":1599919477,"sys":{"type":1,"id":3449,"country":"US","sunrise":1599914329,"sunset":1599959606},"timezone":-21600,"id":5419384,"name":"Denver","cod":200}'
+  recorded_at: Sat, 12 Sep 2020 14:15:25 GMT
+recorded_with: VCR 6.0.0

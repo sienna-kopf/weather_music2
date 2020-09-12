@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=WEATHER_API_KEY&q=santiago,%20chi&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 12 Sep 2020 14:15:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '461'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=santiago%2c+chi&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-70.65,"lat":-33.46},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":54.97,"feels_like":50.59,"temp_min":48.2,"temp_max":61,"pressure":1018,"humidity":53},"visibility":10000,"wind":{"speed":3.22,"deg":217},"clouds":{"all":0},"dt":1599919757,"sys":{"type":1,"id":8506,"country":"CL","sunrise":1599907515,"sunset":1599949946},"timezone":-10800,"id":3871336,"name":"Santiago","cod":200}'
+  recorded_at: Sat, 12 Sep 2020 14:15:26 GMT
+recorded_with: VCR 6.0.0
