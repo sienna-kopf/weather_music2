@@ -3,6 +3,7 @@ class Forecast
               :country_name,
               :sunrise_time,
               :sunset_time,
+              :main_description,
               :description,
               :icon,
               :temp,
@@ -18,6 +19,7 @@ class Forecast
     @country_name = forecast_info[:sys][:country]
     @sunrise_time = forecast_info[:sys][:sunrise] ##make into real date
     @sunset_time = forecast_info[:sys][:sunset]
+    @main_description = forecast_info[:weather][0][:main]
     @description = forecast_info[:weather][0][:description]
     @icon = forecast_info[:weather][0][:icon]
     @temp = forecast_info[:main][:temp].round(0)
