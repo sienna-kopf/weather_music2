@@ -24,10 +24,17 @@ class WeatherMusicSerializer
       }
   end
 
-  def no_response
+  def no_city_response
     {
       code: 404,
       message: "city_not_found"
+    }
+  end
+
+  def no_playlist_response
+    {
+      code: 404,
+      message: "play_list_not_found"
     }
   end
 end
