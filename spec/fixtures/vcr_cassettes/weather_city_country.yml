@@ -21,11 +21,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sat, 12 Sep 2020 14:15:26 GMT
+      - Sun, 13 Sep 2020 03:55:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '461'
+      - '459'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -39,6 +39,105 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"coord":{"lon":-70.65,"lat":-33.46},"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"base":"stations","main":{"temp":54.97,"feels_like":50.59,"temp_min":48.2,"temp_max":61,"pressure":1018,"humidity":53},"visibility":10000,"wind":{"speed":3.22,"deg":217},"clouds":{"all":0},"dt":1599919757,"sys":{"type":1,"id":8506,"country":"CL","sunrise":1599907515,"sunset":1599949946},"timezone":-10800,"id":3871336,"name":"Santiago","cod":200}'
-  recorded_at: Sat, 12 Sep 2020 14:15:26 GMT
+        sky","icon":"01n"}],"base":"stations","main":{"temp":50.45,"feels_like":48.18,"temp_min":46.4,"temp_max":54,"pressure":1019,"humidity":75},"visibility":10000,"wind":{"speed":1.12,"deg":0},"clouds":{"all":0},"dt":1599969084,"sys":{"type":1,"id":8486,"country":"CL","sunrise":1599993832,"sunset":1600036385},"timezone":-10800,"id":3871336,"name":"Santiago","cod":200}'
+  recorded_at: Sun, 13 Sep 2020 03:55:19 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=1&offset=5&q=Clear&type=playlist
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer BQBzdpEBohe9ZwUrtPN0828pSWku1Gd6ibrYfvDzk2hTd00d-v9-8V2f3J8rI8J5rC62hSAWrI99wZibkQ9LB1t4y4nWY33849fR3Ndlmo5tfMyUDTkesP_QrP3JPWfdRfxPu1BeRzxXnaVdS7a8Og6gGv3NuvdCYGQlp3yVQqf8XZVsrzqlZy1yMmxV
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sun, 13 Sep 2020 03:55:18 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "playlists" : {
+            "href" : "https://api.spotify.com/v1/search?query=Clear&type=playlist&offset=5&limit=1",
+            "items" : [ {
+              "collaborative" : false,
+              "description" : "For soothing study sessions and a bit of night time yoga. Just nice and relaxing alternative folk music.",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/playlist/0Cy6I6iag67srxk5Zlgdf3"
+              },
+              "href" : "https://api.spotify.com/v1/playlists/0Cy6I6iag67srxk5Zlgdf3",
+              "id" : "0Cy6I6iag67srxk5Zlgdf3",
+              "images" : [ {
+                "height" : null,
+                "url" : "https://i.scdn.co/image/ab67706c0000bebbb8c21418e91d36583240ffe6",
+                "width" : null
+              } ],
+              "name" : "Clear Your Mind",
+              "owner" : {
+                "display_name" : "sroscelli",
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/user/sroscelli"
+                },
+                "href" : "https://api.spotify.com/v1/users/sroscelli",
+                "id" : "sroscelli",
+                "type" : "user",
+                "uri" : "spotify:user:sroscelli"
+              },
+              "primary_color" : null,
+              "public" : null,
+              "snapshot_id" : "MTk5LDlhMTE0NGNkNjg4ZjVkZDViNmM4MTk3YTlhMzAxOTQ1MzMxNGIwMWU=",
+              "tracks" : {
+                "href" : "https://api.spotify.com/v1/playlists/0Cy6I6iag67srxk5Zlgdf3/tracks",
+                "total" : 136
+              },
+              "type" : "playlist",
+              "uri" : "spotify:playlist:0Cy6I6iag67srxk5Zlgdf3"
+            } ],
+            "limit" : 1,
+            "next" : "https://api.spotify.com/v1/search?query=Clear&type=playlist&offset=6&limit=1",
+            "offset" : 5,
+            "previous" : "https://api.spotify.com/v1/search?query=Clear&type=playlist&offset=4&limit=1",
+            "total" : 16293
+          }
+        }
+  recorded_at: Sun, 13 Sep 2020 03:55:19 GMT
 recorded_with: VCR 6.0.0
