@@ -1,7 +1,8 @@
 class WeatherMusicSerializer
 
-  def initialize(forecast = nil)
+  def initialize(forecast = nil, playlist = nil)
     @forecast = forecast
+    @playlist = playlist
   end
 
   def data_hash
@@ -17,7 +18,9 @@ class WeatherMusicSerializer
        pressure: @forecast.pressure,
        humidity: @forecast.humidity,
        visibility: @forecast.visibility,
-       wind: @forecast.wind
+       wind: @forecast.wind,
+       playlist_id: @playlist.id,
+       playlist_uri: @playlist.uri
       }
   end
 
