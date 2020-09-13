@@ -14,9 +14,14 @@ class WeatherMusicController < ApplicationController
     if weather_response[:cod] == 200
       forecast = Forecast.new(weather_response)
       spotify_response = SpotifyService.new.playlist(token, forecast.description)
-      WeatherMusicSerializer.new(forecast).data_hash.to_json
+      if spotify_response[:cod] == 200
+        playlist = Playlist.new(spotify_response)
+        WeatherMusicSerializer.new(forecast, playlist).data_hash.to_json
+      else
+        WeatherMusicSerializer.new.no_playlist_response.to_json
+      end 
     else
-      WeatherMusicSerializer.new.no_response.to_json
+      WeatherMusicSerializer.new.no_city_response.to_json
     end
   end
 end
