@@ -2,15 +2,9 @@ require 'spec_helper'
 
 describe Forecast do
   it 'exists' do
-    attrs = {:playlists=>
-      {:items=>
-        [
-          {
+    attrs = {
           :id=>"1VT0GnhelpcB9qtnGo70rv",
           :uri=>"spotify:playlist:1VT0GnhelpcB9qtnGo70rv"
-        }
-        ]
-      }
     }
 
     playlist = Playlist.new(attrs)

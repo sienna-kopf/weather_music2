@@ -3,7 +3,7 @@ class Playlist
               :uri
 
   def initialize(playlist_info)
-    @id = playlist_info[:playlists][:items][0][:id]
-    @uri = playlist_info[:playlists][:items][0][:uri]
+    @id = playlist_info[:id]
+    @uri = playlist_info[:uri]
   end
 end
