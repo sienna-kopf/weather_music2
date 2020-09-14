@@ -16,6 +16,7 @@ group :test do
   gem 'rack-test'
   gem 'vcr'
   gem 'webmock'
+  gem 'simplecov'
 end
 
 group :development, :test do
