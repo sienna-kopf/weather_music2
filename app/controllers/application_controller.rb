@@ -11,4 +11,25 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  def serialization(weather_response, token)
+    if weather_success?(weather_response)
+      forecast = Forecast.new(weather_response)
+      spotify_response = SpotifyService.new.playlist(token, forecast.main_description)
+      if playlist_success?(spotify_response)
+        WeatherMusicSerializer.new(forecast, Playlist.new(spotify_response)).data_hash.to_json
+      else
+        WeatherMusicSerializer.new.no_playlist_response.to_json
+      end
+    else
+      WeatherMusicSerializer.new.no_city_response.to_json
+    end
+  end
+
+  def playlist_success?(spotify_response)
+    spotify_response[:playlists][:items].empty? == false
+  end
+
+  def weather_success?(weather_response)
+    weather_response[:cod] == 200
+  end
 end
