@@ -6,3 +6,6 @@
 
 # git ignore env
 /.env
+
+#ignore simplecov coverage
+echo "coverage" >> .gitignore
