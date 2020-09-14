@@ -15,8 +15,9 @@ class ApplicationController < Sinatra::Base
     if weather_success?(weather_response)
       forecast = Forecast.new(weather_response)
       spotify_response = SpotifyService.new.playlist(token, forecast.main_description)
+      playlist = spotify_response[:playlists][:items].shuffle.first
       if playlist_success?(spotify_response)
-        WeatherMusicSerializer.new(forecast, Playlist.new(spotify_response)).data_hash.to_json
+        WeatherMusicSerializer.new(forecast, Playlist.new(playlist)).data_hash.to_json
       else
         WeatherMusicSerializer.new.no_playlist_response.to_json
       end

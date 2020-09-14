@@ -4,7 +4,7 @@ Dotenv.load
 
 class SpotifyService
   def playlist(token, weather)
-    to_json("?q=#{weather}&type=playlist&limit=1&offset=5", token)
+    to_json("?q=#{weather}&type=playlist&limit=20&offset=5", token)
   end
 
   private
