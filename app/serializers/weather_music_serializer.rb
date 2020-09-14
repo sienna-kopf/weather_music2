@@ -16,13 +16,15 @@ class WeatherMusicSerializer
             "sunrise_time": @forecast.sunrise_time,
             "sunset_time": @forecast.sunset_time,
             "description": @forecast.description,
+            "main_description": @forecast.main_description,
             "temp": @forecast.temp,
             "temp_min": @forecast.temp_min,
             "temp_max": @forecast.temp_max,
             "pressure": @forecast.pressure,
             "humidity": @forecast.humidity,
             "visibility": @forecast.visibility,
-            "wind": @forecast.wind
+            "wind": @forecast.wind,
+            "icon": @forecast.icon
           }
         },
         "music": {
@@ -54,7 +56,7 @@ class WeatherMusicSerializer
         "type": "error",
         "attributes": {
           "code": 404,
-          "message": "play_list_not_found"
+          "message": "playlist_not_found"
         }
       }
     }
