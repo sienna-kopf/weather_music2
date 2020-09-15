@@ -31,44 +31,82 @@ class ApplicationController < Sinatra::Base
   def serialization(weather_response, token)
     if weather_success?(weather_response)
       forecast = Forecast.new(weather_response)
-      response_1 = SpotifyService.new.weather_tracks_first_50(token)
-      response_1_ids = response_1[:items].map {|item| item[:track][:id]}
-      if response_1[:total] > 50
-        response_2 = SpotifyService.new.weather_tracks_second_50(token)
-        response_2_ids= response_2[:items].map {|item| item[:track][:id]}
-        all_ids = response_1_ids + response_2_ids
-      else
-        all_ids = response_1_ids
-      end
-      query = all_ids.join(",")
-
-      audio_features_data = SpotifyService.new.audio_features(query, token)
       max = 134.0
       min = 0.0
       val = forecast.temp.to_f
 
-      normalized_temp = [0, [1, (val - min) / (max - min)].min].max
+      response = SpotifyService.new.weather_tracks_first_50(token)
+      song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
+      five_ids = song_ids.take(5)
+      seed_tracks = five_ids.join(",")
 
-      sorted_by_valence_hash = audio_features_data[:audio_features].sort_by do |song|
-        (song[:valence] - normalized_temp).abs
-      end.take(20)
+      result = SpotifyService.new.create_playlist(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
 
-      song_ids = sorted_by_valence_hash.map do |song|
-        song[:id]
+      tracks = result[:tracks].map do |track|
+        Track.new(track[:id])
       end
-
-      tracks = song_ids.map do |id|
-        Track.new(id)
-      end
-
-      
-
-
 
       WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
     else
       WeatherMusicSerializer.new.no_city_response.to_json
     end
+  end
+
+  def target_valence(forecast)
+    max = 116.0
+    min = 0.0
+    val = forecast.temp.to_f
+    [0, [1, (val - min) / (max - min)].min].max.round(1)
+  end
+
+  def target_speech(forecast)
+    max = 36.0
+    min = 0.0
+    val = forecast.wind
+
+    [0, [1, (val - min) / (max - min)].min].max.round(1)
+  end
+
+  def target_mode(forecast)
+    max_temp = 134.0
+    min_temp = 0.0
+    temp_val = forecast.temp.to_f
+    target_temp = [0, [1, (temp_val - min_temp) / (max_temp - min_temp)].min].max
+
+    max_humidity = 0.0
+    min_humidity = 100.0
+    humidity_val = forecast.humidity.to_f
+    target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
+
+    target = ((target_temp + target_humidity) / 2)
+    if target < 0.5
+      return 0
+    else
+      return 1
+    end
+  end
+
+  def target_energy(forecast)
+    max_temp = 134.0
+    min_temp = 0.0
+    temp_val = forecast.temp.to_f
+    target_temp = [0, [1, (temp_val - min_temp) / (max_temp - min_temp)].min].max
+
+    max_humidity = 0.0
+    min_humidity = 100.0
+    humidity_val = forecast.humidity.to_f
+    target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
+
+    ((target_temp + target_humidity) / 2).round(1)
+  end
+
+  def target_tempo(forecast)
+    max = 36.0
+    min = 0.0
+    val = forecast.wind
+    target_temp = [0, [1, (val - min) / (max - min)].min].max
+    range = 480
+    (target_temp * range).round(2)
   end
 
   # def playlist_success?(spotify_response)
