@@ -30,6 +30,10 @@ class ApplicationController < Sinatra::Base
 
   def serialization(weather_response, token)
     if weather_success?(weather_response)
+      binding.pry
+      client_device_response = SpotifyService.new.client_device_id(token)
+      client_device_id = client_device_response[:devices][0][:id]
+
       forecast = Forecast.new(weather_response)
       max = 134.0
       min = 0.0

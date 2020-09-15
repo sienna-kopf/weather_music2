@@ -15,6 +15,11 @@ class SpotifyService
     to_json_tracks("?offset=1&limit=50", token)
   end
 
+  def client_device_id(token)
+    binding.pry
+    to_json_device("me/player/devices", token)
+  end
+
   # def weather_tracks_second_50(token)
   #   to_json_tracks("?offset=50&limit=50", token)
   # end
@@ -29,6 +34,13 @@ class SpotifyService
   # end
 
   private
+
+  def basic_conn(token)
+    header = {
+    Authorization: "Bearer #{token}"
+    }
+    acc = Faraday.new(url: 'https://api.spotify.com/v1/', headers: header)
+  end
 
   def conn(token)
     header = {
@@ -61,6 +73,11 @@ class SpotifyService
     Authorization: "Bearer #{token}"
     }
     acc = Faraday.new(url: 'https://api.spotify.com/v1/audio-features', headers: header)
+  end
+
+  def to_json_device(url, token)
+    response = basic_conn(token).get(url)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def to_json(url, token)
