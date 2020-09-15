@@ -16,8 +16,7 @@ class SpotifyService
   end
 
   def audio_features(uris, token)
-    binding.pry
-    to_json_features("?#{uris}", token)
+    to_json_features("?ids=#{uris}", token)
   end
 
   private

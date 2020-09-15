@@ -1,8 +1,8 @@
 class WeatherMusicSerializer
 
-  def initialize(forecast = nil, playlist = nil)
+  def initialize(forecast = nil, tracks = nil)
     @forecast = forecast
-    @playlist = playlist
+    @tracks = tracks
   end
 
   def data_hash
@@ -27,15 +27,29 @@ class WeatherMusicSerializer
             "icon": @forecast.icon
           }
         },
-        "music": {
-          "type": "playlist",
-          "attributes": {
-            "id": @playlist.id,
-            "uri": @playlist.uri
-          }
-        }
+        "music":
+        tracks_hash.map do |hash_piece|
+          hash_piece
+        end
       }
     }
+  end
+
+  def tracks_hash
+    tracks_array = []
+    start = {
+      "type": "track",
+      "attributes": {
+        "id": ""
+      }
+    }
+    @tracks.reduce(start) do |start, song|
+      start[:attributes][:id] = song.id
+      tracks_array << start
+    end
+    binding.pry
+    tracks_array
+
   end
 
   def no_city_response
