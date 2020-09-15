@@ -19,6 +19,11 @@ class SpotifyService
     to_json_features("?ids=#{uris}", token)
   end
 
+  def create_playlist(tracks, token)
+    to_json_features("?ids=#{uris}", token)
+
+  end
+
   private
 
   def conn(token)
