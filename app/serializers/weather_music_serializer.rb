@@ -1,38 +1,21 @@
 class WeatherMusicSerializer
 
-  def initialize(forecast = nil, playlist = nil)
+  def initialize(forecast = nil, tracks = nil)
     @forecast = forecast
-    @playlist = playlist
+    @tracks = tracks
   end
 
   def data_hash
     {
-      "data": {
-        "weather": {
-          "type": "forecast",
-          "attributes": {
-            "city_name": @forecast.city_name,
-            "country_name": @forecast.country_name,
-            "sunrise_time": @forecast.sunrise_time,
-            "sunset_time": @forecast.sunset_time,
-            "description": @forecast.description,
-            "main_description": @forecast.main_description,
-            "temp": @forecast.temp,
-            "temp_min": @forecast.temp_min,
-            "temp_max": @forecast.temp_max,
-            "pressure": @forecast.pressure,
-            "humidity": @forecast.humidity,
-            "visibility": @forecast.visibility,
-            "wind": @forecast.wind,
-            "icon": @forecast.icon
-          }
+      data:
+      {
+        weather: {
+          type: 'forecast',
+          attributes: @forecast.as_json
         },
-        "music": {
-          "type": "playlist",
-          "attributes": {
-            "id": @playlist.id,
-            "uri": @playlist.uri
-          }
+        music: {
+          type: 'tracks',
+          attributes: @tracks.as_json
         }
       }
     }
@@ -45,18 +28,6 @@ class WeatherMusicSerializer
         "attributes": {
           "code": 404,
           "message": "city_not_found"
-        }
-      }
-    }
-  end
-
-  def no_playlist_response
-    {
-      "data": {
-        "type": "error",
-        "attributes": {
-          "code": 404,
-          "message": "playlist_not_found"
         }
       }
     }

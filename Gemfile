@@ -10,6 +10,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'dotenv'
 gem 'faraday'
+gem 'fast_jsonapi'
 
 group :test do
   gem 'rspec'
