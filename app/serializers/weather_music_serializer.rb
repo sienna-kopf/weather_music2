@@ -9,20 +9,16 @@ class WeatherMusicSerializer
     {
       data:
       {
-        weather:
-        {
+        weather: {
           type: 'forecast',
           attributes: @forecast.as_json
-          }
         },
-        {
-          music:
-          {
-            type: 'tracks',
-            attributes: @tracks.as_json
-          }
+        music: {
+          type: 'tracks',
+          attributes: @tracks.as_json
         }
       }
+    }
   end
 
   def no_city_response
