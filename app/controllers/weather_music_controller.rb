@@ -10,4 +10,8 @@ class WeatherMusicController < ApplicationController
   get "/weather_playlist" do
     serialization(WeatherService.new.forecast(params[:q]), params[:token])
   end
+
+  post "/add_playlist_to_library" do
+    playlist(params[:q], params[:main_description], params[:user_id], params[:tracks], params[:token])
+  end
 end

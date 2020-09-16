@@ -11,6 +11,17 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  def playlist(location, weather_description, user_id, tracks_collection, token)
+    playlist_name = "its a great day for #{weather_description} weather in #{location}"
+    new_playlist = SpotifyService.new.create_playlist(playlist_name, user_id, token)
+    playlist_id = new_playlist[:id]
+    playlist_external_url = new_playlist[:external_urls][:spotify]
+    track_uris = JSON.parse(tracks_collection).join(",")
+    filled_playlist_status = SpotifyService.new.fill_playlist(playlist_id, track_uris, token)
+
+    PlaylistSerializer.new(filled_playlist_status, playlist_external_url).data_hash.to_json
+  end
+
   def serialization(weather_response, token)
     if weather_success?(weather_response)
       forecast = Forecast.new(weather_response)
@@ -20,7 +31,7 @@ class ApplicationController < Sinatra::Base
       five_ids = song_ids.take(5)
       seed_tracks = five_ids.join(",")
 
-      result = SpotifyService.new.create_playlist(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
+      result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
 
       tracks = result[:tracks].map do |data|
         Track.new(data)
