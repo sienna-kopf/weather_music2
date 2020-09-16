@@ -1,8 +1,8 @@
 class Track
-  attr_reader :id
+  attr_reader :uri
 
   def initialize(result)
-    @id = result[:id]
+    @uri = result[:uri]
     @title = result[:name]
     @artist = result[:artists].first[:name]
   end
