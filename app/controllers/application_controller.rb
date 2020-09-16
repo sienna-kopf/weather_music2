@@ -25,7 +25,6 @@ class ApplicationController < Sinatra::Base
       tracks = result[:tracks].map do |data|
         Track.new(data)
       end
-      binding.pry
       WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
     else
       WeatherMusicSerializer.new.no_city_response.to_json
