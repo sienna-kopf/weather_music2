@@ -11,33 +11,9 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  # def serialization(weather_response, token)
-  #   if weather_success?(weather_response)
-  #     binding.pry
-  #     forecast = Forecast.new(weather_response)
-  #
-  #     spotify_response = SpotifyService.new.playlist(token, forecast.main_description)
-  #     playlist = spotify_response[:playlists][:items].shuffle.first
-  #     if playlist_success?(spotify_response)
-  #       WeatherMusicSerializer.new(forecast, Playlist.new(playlist)).data_hash.to_json
-  #     else
-  #       WeatherMusicSerializer.new.no_playlist_response.to_json
-  #     end
-  #   else
-  #     WeatherMusicSerializer.new.no_city_response.to_json
-  #   end
-  # end
-
   def serialization(weather_response, token)
     if weather_success?(weather_response)
-      binding.pry
-      client_device_response = SpotifyService.new.client_device_id(token)
-      client_device_id = client_device_response[:devices][0][:id]
-
       forecast = Forecast.new(weather_response)
-      max = 134.0
-      min = 0.0
-      val = forecast.temp.to_f
 
       response = SpotifyService.new.weather_tracks_first_50(token)
       song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
@@ -46,10 +22,10 @@ class ApplicationController < Sinatra::Base
 
       result = SpotifyService.new.create_playlist(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
 
-      tracks = result[:tracks].map do |track|
-        Track.new(track[:id])
+      tracks = result[:tracks].map do |data|
+        Track.new(data)
       end
-
+      binding.pry
       WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
     else
       WeatherMusicSerializer.new.no_city_response.to_json
@@ -112,10 +88,6 @@ class ApplicationController < Sinatra::Base
     range = 480
     (target_temp * range).round(2)
   end
-
-  # def playlist_success?(spotify_response)
-  #   spotify_response[:playlists][:items].empty? == false
-  # end
 
   def weather_success?(weather_response)
     weather_response[:cod] == 200
