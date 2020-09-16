@@ -1,5 +1,7 @@
 class Track
-  attr_reader :uri
+  attr_reader :uri,
+              :title,
+              :artist
 
   def initialize(result)
     @uri = result[:uri]
