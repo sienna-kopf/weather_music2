@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk
+      - Bearer BQDsKNYViB8eif9EaYLOxfU6D3P54qIuyh6TUdJAP9asvGsUeHZjil5oWg_8WCdDfhT8Ue6nfHVPshD9ft2pRCzO25ZyyR2uvHmf3vSq2yE5gxkDaNoAqBmora8kFXXXmK_XsHUsIZEZthy6-3T6oHVOFafWG6aP1YCIKplJdwFRN1wxvjsD3H3Wl73lI0U4-0j7A4803fjMs8WsWSgDqBuJvOX2ofbpQP755U_dfIJpNtg
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N
+      - https://api.spotify.com/v1/playlists/2muYqfJNzTdSN1VpgzzJwv
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -46,7 +46,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 00:31:16 GMT
+      - Thu, 17 Sep 2020 16:24:31 GMT
       Server:
       - envoy
       Via:
@@ -62,14 +62,14 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/02bhnQKixUFFKeRx4M7s6N"
+            "spotify" : "https://open.spotify.com/playlist/2muYqfJNzTdSN1VpgzzJwv"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N",
-          "id" : "02bhnQKixUFFKeRx4M7s6N",
+          "href" : "https://api.spotify.com/v1/playlists/2muYqfJNzTdSN1VpgzzJwv",
+          "id" : "2muYqfJNzTdSN1VpgzzJwv",
           "images" : [ ],
           "name" : "party time",
           "owner" : {
@@ -84,9 +84,9 @@ http_interactions:
           },
           "primary_color" : null,
           "public" : false,
-          "snapshot_id" : "MSw3YjFlZDc5MzkzN2YzYWFkYTgzZGZhYzc0MzhhZDNhMTkyMDNjMjFi",
+          "snapshot_id" : "MSw5ZjNjZGM2OTkyYjc5ZTIyMGUyZDUyNGRkYzcxY2NiMWZiMTFhMWFi",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/2muYqfJNzTdSN1VpgzzJwv/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -95,7 +95,7 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:02bhnQKixUFFKeRx4M7s6N"
+          "uri" : "spotify:playlist:2muYqfJNzTdSN1VpgzzJwv"
         }
-  recorded_at: Thu, 17 Sep 2020 00:31:16 GMT
+  recorded_at: Thu, 17 Sep 2020 16:24:31 GMT
 recorded_with: VCR 6.0.0
