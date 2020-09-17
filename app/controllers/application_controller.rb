@@ -1,6 +1,7 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -10,10 +11,22 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  def serialization(weather_response, token)
+    if weather_success?(weather_response)
+        if user_tracks(token)[:items].count < 5
+          genre_route(token, forecast(weather_response))
+        else
+          songs_route(token, forecast(weather_response), user_tracks(token))
+        end
+    else
+      WeatherMusicSerializer.new.no_city_response.to_json
+    end
+  end
+
+  #playlist methods
+
   def playlist(playlist_name, user_id, tracks_collection, token)
-    PlaylistSerializer.new(
-      fill_playlist(playlist_name, user_id, tracks_collection, token),
-      create_playlist(playlist_name, user_id, token)[:external_urls][:spotify]).data_hash.to_json
+    serialize_playlist(fill_playlist(playlist_name, user_id, tracks_collection, token), create_playlist(playlist_name, user_id, token))
   end
 
   def fill_playlist(playlist_name, user_id, tracks_collection, token)
@@ -27,23 +40,53 @@ class ApplicationController < Sinatra::Base
     SpotifyService.new.create_playlist(playlist_name, user_id, token)
   end
 
+  #routes based on user library methods
+
+  def genre_route(token, forecast)
+    seed_genres = SpotifyService.new.genres(token)[:genres].shuffle.take(5).join(",")
+    result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)
+    serialize_weather_music(forecast, result)
+  end
+
+  def songs_route(token, forecast, response)
+    seed_tracks = response[:items].map {|item| item[:track][:id]}.shuffle.take(5).join(",")
+    result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
+    serialize_weather_music(forecast, result)
+  end
+
+  #helper methods
+
   def parse_tracks(tracks_collection)
     JSON.parse(tracks_collection).join(",")
   end
 
-  def serialization(weather_response, token)
-    if weather_success?(weather_response)
-      tracks = make_weather_setlist(token)
-      if tracks.count < 5
-        tracks = genre_route(token, Forecast.new(weather_response))
-      else
-        tracks = songs_route(token, Forecast.new(weather_response), tracks)
-      end
-        WeatherMusicSerializer.new(Forecast.new(weather_response), tracks).data_hash.to_json
-    else
-      WeatherMusicSerializer.new.no_city_response.to_json
+  def serialize_weather_music(forecast, result)
+    WeatherMusicSerializer.new(forecast, create_tracks(result)).data_hash.to_json
+  end
+
+  def create_tracks(result)
+    result[:tracks].map do |data|
+      Track.new(data)
     end
   end
+
+  def user_tracks(token)
+    SpotifyService.new.weather_tracks_first_50(token)
+  end
+
+  def weather_success?(weather_response)
+    weather_response[:cod] == 200
+  end
+
+  def serialize_playlist(status, new_playlist)
+    PlaylistSerializer.new(status, new_playlist[:external_urls][:spotify]).data_hash.to_json
+  end
+
+  def forecast(weather_response)
+    Forecast.new(weather_response)
+  end
+
+  #weather methods
 
   def normalization_formula(min, max, val)
     [0, [1, (val - min) / (max - min)].min].max
@@ -73,11 +116,9 @@ class ApplicationController < Sinatra::Base
     max_temp = 134.0
     min_temp = 0.0
     target_temp = normalization_formula(max_temp, min_temp, forecast.temp.to_f)
-
     max_humidity = 0.0
     min_humidity = 100.0
     target_humidity = normalization_formula(max_humidity, min_humidity, forecast.humidity.to_f)
-
     minor_or_major(average(target_temp, target_humidity))
   end
 
@@ -85,7 +126,6 @@ class ApplicationController < Sinatra::Base
     max_temp = 134.0
     min_temp = 0.0
     target_temp = normalization_formula(max_temp, min_temp, forecast.temp.to_f)
-
     max_humidity = 0.0
     min_humidity = 100.0
     target_humidity = normalization_formula(max_humidity, min_humidity, forecast.humidity.to_f)
@@ -101,35 +141,5 @@ class ApplicationController < Sinatra::Base
 
   def ratio_scale(decimal, range)
     decimal * range
-  end
-
-  def weather_success?(weather_response)
-    weather_response[:cod] == 200
-  end
-
-  def genre_route(token, forecast)
-    genres = SpotifyService.new.genres(token)
-    genres = genres[:genres].shuffle.take(5)
-    seed_genres = genres.join(",")
-    result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)
-    make_tracks(result[:tracks])
-  end
-
-  def songs_route(token, forecast, response)
-    song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
-    five_ids = song_ids.take(5)
-    seed_tracks = five_ids.join(",")
-    result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
-    make_tracks(result[:tracks])
-  end
-
-  def make_weather_setlist(token)
-    SpotifyService.new.weather_tracks_first_50(token)
-  end
-
-  def make_tracks(songs)
-    songs.map do |data|
-      Track.new(data)
-    end
   end
 end
