@@ -11,6 +11,8 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  # "/weather_music" path method
+
   def serialization(weather_response, token)
     if weather_success?(weather_response)
         if user_tracks(token)[:items].count < 5
@@ -23,7 +25,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  #playlist methods
+  # "/add_playlist_to_library" path methods
 
   def playlist(playlist_name, user_id, tracks_collection, token)
     serialize_playlist(fill_playlist(playlist_name, user_id, tracks_collection, token), create_playlist(playlist_name, user_id, token))
@@ -38,6 +40,16 @@ class ApplicationController < Sinatra::Base
 
   def create_playlist(playlist_name, user_id, token)
     SpotifyService.new.create_playlist(playlist_name, user_id, token)
+  end
+
+  #serializers
+
+  def serialize_playlist(status, new_playlist)
+    PlaylistSerializer.new(status, new_playlist[:external_urls][:spotify]).data_hash.to_json
+  end
+
+  def serialize_weather_music(forecast, result)
+    WeatherMusicSerializer.new(forecast, create_tracks(result)).data_hash.to_json
   end
 
   #routes based on user library methods
@@ -56,12 +68,16 @@ class ApplicationController < Sinatra::Base
 
   #helper methods
 
-  def parse_tracks(tracks_collection)
-    JSON.parse(tracks_collection).join(",")
+  def forecast(weather_response)
+    Forecast.new(weather_response)
   end
 
-  def serialize_weather_music(forecast, result)
-    WeatherMusicSerializer.new(forecast, create_tracks(result)).data_hash.to_json
+  def weather_success?(weather_response)
+    weather_response[:cod] == 200
+  end
+
+  def parse_tracks(tracks_collection)
+    JSON.parse(tracks_collection).join(",")
   end
 
   def create_tracks(result)
@@ -74,19 +90,7 @@ class ApplicationController < Sinatra::Base
     SpotifyService.new.weather_tracks_first_50(token)
   end
 
-  def weather_success?(weather_response)
-    weather_response[:cod] == 200
-  end
-
-  def serialize_playlist(status, new_playlist)
-    PlaylistSerializer.new(status, new_playlist[:external_urls][:spotify]).data_hash.to_json
-  end
-
-  def forecast(weather_response)
-    Forecast.new(weather_response)
-  end
-
-  #weather methods
+  #weather audio feature calculation methods
 
   def normalization_formula(min, max, val)
     [0, [1, (val - min) / (max - min)].min].max
