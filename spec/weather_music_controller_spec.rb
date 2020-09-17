@@ -7,6 +7,7 @@ end
 describe WeatherMusicController do
   before :each do
     @token = "BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk"
+    @user_id = "bosigp0djzqxoyj6yq6sdzzaq"
   end
   describe 'get requests' do
     describe '/weather_playlist' do
@@ -132,10 +133,9 @@ describe WeatherMusicController do
         VCR.use_cassette('created_playlist') do
           location = "paris"
           main_description = "clouds"
-          user_id = "bosigp0djzqxoyj6yq6sdzzaq"
           tracks = "[\"spotify:track:4mYG4iHgfxlPaqfT3BQ0ec\", \"spotify:track:1Bj6YgjjPbEb4jhQ50T8tJ\", \"spotify:track:6qspW4YKycviDFjHBOaqUY\", \"spotify:track:12G1TYIfbpvC0mdFFn4Pbg\", \"spotify:track:6gJdDnF2TzfA1WPMXuCa3x\", \"spotify:track:7sJN693sYKEIEMu7fc5VnJ\", \"spotify:track:2vytyWClpsahqcL6NibSE3\", \"spotify:track:4Yenz5JZZOUiZSeyKY8bDz\", \"spotify:track:3jpaB4JCMidb5XshQtDSGm\", \"spotify:track:7KFThZQCAcj8JXdPRtdrXE\", \"spotify:track:5vWwuFTSoPdyY8rH1mui8W\", \"spotify:track:4o6BgsqLIBViaGVbx5rbRk\", \"spotify:track:24PWKmemCvqfyVXODhoKHW\", \"spotify:track:4O4Z8VFczL8MxIOmqVWc1b\", \"spotify:track:3whRKAOlJ0M3banzcChvQv\", \"spotify:track:4aOjDKk1s5hlsEY5ZhhX3l\", \"spotify:track:5krOROgmf8adn3SJzeKLZy\", \"spotify:track:0qRR9d89hIS0MHRkQ0ejxX\", \"spotify:track:5LxvwujISqiB8vpRYv887S\", \"spotify:track:1GrikfH0jDejDvrxo84n4P\"]"
 
-          post "/add_playlist_to_library?q=#{location}&main_description=#{main_description}&user_id=#{user_id}&tracks=#{tracks}&token=#{@token}"
+          post "/add_playlist_to_library?q=#{location}&main_description=#{main_description}&user_id=#{@user_id}&tracks=#{tracks}&token=#{@token}"
           expect(last_response).to be_successful
           expect(last_response.content_type).to eq('application/json')
           response = JSON.parse(last_response.body, symbolize_names: true)

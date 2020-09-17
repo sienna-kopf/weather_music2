@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/4wqzD0V4xWHcsicoAReCp5
+      - https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -46,7 +46,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 00:17:40 GMT
+      - Thu, 17 Sep 2020 00:31:16 GMT
       Server:
       - envoy
       Via:
@@ -62,14 +62,14 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/4wqzD0V4xWHcsicoAReCp5"
+            "spotify" : "https://open.spotify.com/playlist/02bhnQKixUFFKeRx4M7s6N"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/4wqzD0V4xWHcsicoAReCp5",
-          "id" : "4wqzD0V4xWHcsicoAReCp5",
+          "href" : "https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N",
+          "id" : "02bhnQKixUFFKeRx4M7s6N",
           "images" : [ ],
           "name" : "party time",
           "owner" : {
@@ -84,9 +84,9 @@ http_interactions:
           },
           "primary_color" : null,
           "public" : false,
-          "snapshot_id" : "MSxiMmY5NGY5NDM4ZjAyM2FmNzU0OTZhMmI4ZGVhMGNjZmRmMGZhMjI2",
+          "snapshot_id" : "MSw3YjFlZDc5MzkzN2YzYWFkYTgzZGZhYzc0MzhhZDNhMTkyMDNjMjFi",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/4wqzD0V4xWHcsicoAReCp5/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -95,7 +95,7 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:4wqzD0V4xWHcsicoAReCp5"
+          "uri" : "spotify:playlist:02bhnQKixUFFKeRx4M7s6N"
         }
-  recorded_at: Thu, 17 Sep 2020 00:17:40 GMT
+  recorded_at: Thu, 17 Sep 2020 00:31:16 GMT
 recorded_with: VCR 6.0.0
