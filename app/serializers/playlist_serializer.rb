@@ -19,5 +19,4 @@ class PlaylistSerializer
       }
     }
   end
-
 end

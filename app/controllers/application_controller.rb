@@ -18,7 +18,6 @@ class ApplicationController < Sinatra::Base
     playlist_external_url = new_playlist[:external_urls][:spotify]
     track_uris = JSON.parse(tracks_collection).join(",")
     filled_playlist_status = SpotifyService.new.fill_playlist(playlist_id, track_uris, token)
-
     PlaylistSerializer.new(filled_playlist_status, playlist_external_url).data_hash.to_json
   end
 
@@ -26,6 +25,15 @@ class ApplicationController < Sinatra::Base
     if weather_success?(weather_response)
       forecast = Forecast.new(weather_response)    
       response = SpotifyService.new.weather_tracks_first_50(token)
+      song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
+      five_ids = song_ids.take(5)
+      seed_tracks = five_ids.join(",")
+      result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
+      tracks = result[:tracks].map do |data|
+        Track.new(data)
+      end
+
+      WeatherMusicSerializer.new(forecast, tracks).data_hash.to_jso
       if response[:items].count < 5
         tracks = genre_route(token, forecast)
         WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
@@ -42,6 +50,7 @@ class ApplicationController < Sinatra::Base
         # end
         WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
       end
+
     else
       WeatherMusicSerializer.new.no_city_response.to_json
     end

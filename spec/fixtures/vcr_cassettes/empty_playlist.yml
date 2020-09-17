@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq/playlists
+    body:
+      encoding: UTF-8
+      string: '{"name":"party time","public":false}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Location:
+      - https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 17 Sep 2020 00:31:16 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "collaborative" : false,
+          "description" : null,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/playlist/02bhnQKixUFFKeRx4M7s6N"
+          },
+          "followers" : {
+            "href" : null,
+            "total" : 0
+          },
+          "href" : "https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N",
+          "id" : "02bhnQKixUFFKeRx4M7s6N",
+          "images" : [ ],
+          "name" : "party time",
+          "owner" : {
+            "display_name" : "Theawulff",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/user/bosigp0djzqxoyj6yq6sdzzaq"
+            },
+            "href" : "https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq",
+            "id" : "bosigp0djzqxoyj6yq6sdzzaq",
+            "type" : "user",
+            "uri" : "spotify:user:bosigp0djzqxoyj6yq6sdzzaq"
+          },
+          "primary_color" : null,
+          "public" : false,
+          "snapshot_id" : "MSw3YjFlZDc5MzkzN2YzYWFkYTgzZGZhYzc0MzhhZDNhMTkyMDNjMjFi",
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/playlists/02bhnQKixUFFKeRx4M7s6N/tracks",
+            "items" : [ ],
+            "limit" : 100,
+            "next" : null,
+            "offset" : 0,
+            "previous" : null,
+            "total" : 0
+          },
+          "type" : "playlist",
+          "uri" : "spotify:playlist:02bhnQKixUFFKeRx4M7s6N"
+        }
+  recorded_at: Thu, 17 Sep 2020 00:31:16 GMT
+recorded_with: VCR 6.0.0

@@ -17,39 +17,38 @@ describe WeatherMusicSerializer do
       :cod=>200
     }
 
-    playlist_attrs = {:playlists=>
-      {:items=>
-        [
-          {
-          :id=>"1VT0GnhelpcB9qtnGo70rv",
-          :uri=>"spotify:playlist:1VT0GnhelpcB9qtnGo70rv"
+    track_attrs =
+    {
+      :uri => "spotify:playlist:1VT0GnhelpcB9qtnGo70rv",
+      :name => "Comfortably Numb",
+      :artists => [
+        {
+          :name => "Pink Floyd"
         }
-        ]
-      }
+      ]
     }
 
     forecast = Forecast.new(weather_attrs)
-    playlist = Playlist.new(playlist_attrs)
-    weather_music = WeatherMusicSerializer.new(forecast, playlist).data_hash
+    single_track = Track.new(track_attrs)
+    weather_music = WeatherMusicSerializer.new(forecast, single_track).data_hash
 
      expect(weather_music).to be_a Hash
-     expect(weather_music[:data][:weather][:attributes]).to have_key :city_name
-     expect(weather_music[:data][:weather][:attributes]).to have_key :country_name
-     expect(weather_music[:data][:weather][:attributes]).to have_key :sunrise_time
-     expect(weather_music[:data][:weather][:attributes]).to have_key :sunset_time
-     expect(weather_music[:data][:weather][:attributes]).to have_key :description
-     expect(weather_music[:data][:weather][:attributes]).to have_key :temp
-     expect(weather_music[:data][:weather][:attributes]).to have_key :temp_min
-     expect(weather_music[:data][:weather][:attributes]).to have_key :temp_max
-     expect(weather_music[:data][:weather][:attributes]).to have_key :pressure
-     expect(weather_music[:data][:weather][:attributes]).to have_key :humidity
-     expect(weather_music[:data][:weather][:attributes]).to have_key :visibility
-     expect(weather_music[:data][:weather][:attributes]).to have_key :wind
-     expect(weather_music[:data][:weather][:attributes]).to have_key :main_description
-     expect(weather_music[:data][:weather][:attributes]).to have_key :icon
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("city_name")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("country_name")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("sunrise_time")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("sunset_time")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("temp_min")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("temp_max")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("pressure")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("humidity")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("visibility")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("wind")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("main_description")
+     expect(weather_music[:data][:weather][:attributes]).to have_key ("icon")
 
-     expect(weather_music[:data][:music][:attributes]).to have_key :id
-     expect(weather_music[:data][:music][:attributes]).to have_key :uri
+     expect(weather_music[:data][:music][:attributes]).to have_key ("uri")
+     expect(weather_music[:data][:music][:attributes]).to have_key ("title")
+     expect(weather_music[:data][:music][:attributes]).to have_key ("artist")
   end
 
   it "no_city" do
@@ -59,14 +58,5 @@ describe WeatherMusicSerializer do
     expect(weather_music[:data][:attributes]).to have_key :message
     expect(weather_music[:data][:attributes][:code]).to eq(404)
     expect(weather_music[:data][:attributes][:message]).to eq("city_not_found")
-  end
-
-  it "no_playlist" do
-    weather_music = WeatherMusicSerializer.new.no_playlist_response
-    expect(weather_music).to be_a Hash
-    expect(weather_music[:data][:attributes]).to have_key :code
-    expect(weather_music[:data][:attributes]).to have_key :message
-    expect(weather_music[:data][:attributes][:code]).to eq(404)
-    expect(weather_music[:data][:attributes][:message]).to eq("playlist_not_found")
   end
 end
