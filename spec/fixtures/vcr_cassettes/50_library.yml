@@ -1,0 +1,941 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/me/tracks?limit=50&offset=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer BQC2UxsMlnHAzDviAMtJtUw3jRCbzmUyFqv_Uo0EYwGWwvxV5ISrymRwnX0kt7OnO7Efjx4UWCwKO4vE6dIXMxH4OKJzb6lurlWG4KWNAwYUnjuJIzS4ajaxDaHVJuzib2tXnxWNyFukyrUXPrpct4llFD3n9aUJaP0TPrsQaeYRg5c7sieFgVKvho3VwjAGSwuhKWbXMx-0f58IkUKZBLJ6ZKQ_-r86KPi-H5gPP3Y
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Etag:
+      - '"MC-IjEwMzQ5YWU1ODA2MWJmMzc3MGMzNGVjMzA4Njc0OGM5Ig=="'
+      Vary:
+      - Authorization
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Wed, 16 Sep 2020 23:21:35 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/me/tracks?offset=1&limit=50",
+          "items" : [ {
+            "added_at" : "2020-09-16T20:55:06Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/7B4hKK0S9QYnaoqa9OuwgX"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/7B4hKK0S9QYnaoqa9OuwgX",
+                  "id" : "7B4hKK0S9QYnaoqa9OuwgX",
+                  "name" : "Eazy-E",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:7B4hKK0S9QYnaoqa9OuwgX"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/1SZNTl621XOcjFwOKtVy56"
+                },
+                "href" : "https://api.spotify.com/v1/albums/1SZNTl621XOcjFwOKtVy56",
+                "id" : "1SZNTl621XOcjFwOKtVy56",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273655453a89b986b39ed563057",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02655453a89b986b39ed563057",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851655453a89b986b39ed563057",
+                  "width" : 64
+                } ],
+                "name" : "It's On (Dr. Dre) 187um Killa",
+                "release_date" : "1993-11-05",
+                "release_date_precision" : "day",
+                "total_tracks" : 8,
+                "type" : "album",
+                "uri" : "spotify:album:1SZNTl621XOcjFwOKtVy56"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/7B4hKK0S9QYnaoqa9OuwgX"
+                },
+                "href" : "https://api.spotify.com/v1/artists/7B4hKK0S9QYnaoqa9OuwgX",
+                "id" : "7B4hKK0S9QYnaoqa9OuwgX",
+                "name" : "Eazy-E",
+                "type" : "artist",
+                "uri" : "spotify:artist:7B4hKK0S9QYnaoqa9OuwgX"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 175240,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "US23S9333105"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/4cPhuLaWqn0TZCs71wSk6s"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/4cPhuLaWqn0TZCs71wSk6s",
+              "id" : "4cPhuLaWqn0TZCs71wSk6s",
+              "is_local" : false,
+              "name" : "Gimmie That Nutt",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/21a1fdd07cdc4194bab6a0077e55c9df06db3856?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 5,
+              "type" : "track",
+              "uri" : "spotify:track:4cPhuLaWqn0TZCs71wSk6s"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:58Z",
+            "track" : {
+              "album" : {
+                "album_type" : "compilation",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+                  "id" : "0LyfQWJT6nXafLPZqxe9Of",
+                  "name" : "Various Artists",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+                } ],
+                "available_markets" : [ "CA", "ID", "IN", "MY", "RU", "TR", "UA", "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/4Yljxbs82W3wSznyIom36N"
+                },
+                "href" : "https://api.spotify.com/v1/albums/4Yljxbs82W3wSznyIom36N",
+                "id" : "4Yljxbs82W3wSznyIom36N",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2730894fd084715efc22c21e27a",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e020894fd084715efc22c21e27a",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048510894fd084715efc22c21e27a",
+                  "width" : 64
+                } ],
+                "name" : "Straight Outta Compton (Music From The Motion Picture)",
+                "release_date" : "2016-01-08",
+                "release_date_precision" : "day",
+                "total_tracks" : 16,
+                "type" : "album",
+                "uri" : "spotify:album:4Yljxbs82W3wSznyIom36N"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/7B4hKK0S9QYnaoqa9OuwgX"
+                },
+                "href" : "https://api.spotify.com/v1/artists/7B4hKK0S9QYnaoqa9OuwgX",
+                "id" : "7B4hKK0S9QYnaoqa9OuwgX",
+                "name" : "Eazy-E",
+                "type" : "artist",
+                "uri" : "spotify:artist:7B4hKK0S9QYnaoqa9OuwgX"
+              } ],
+              "available_markets" : [ "CA", "ID", "IN", "MY", "RU", "TR", "UA", "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 337134,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USPO10050043"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0z0ZTs5iDCyNFZU7DI29lQ"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0z0ZTs5iDCyNFZU7DI29lQ",
+              "id" : "0z0ZTs5iDCyNFZU7DI29lQ",
+              "is_local" : false,
+              "name" : "Boyz-N-The Hood",
+              "popularity" : 49,
+              "preview_url" : null,
+              "track_number" : 6,
+              "type" : "track",
+              "uri" : "spotify:track:0z0ZTs5iDCyNFZU7DI29lQ"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:51Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/7B4hKK0S9QYnaoqa9OuwgX"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/7B4hKK0S9QYnaoqa9OuwgX",
+                  "id" : "7B4hKK0S9QYnaoqa9OuwgX",
+                  "name" : "Eazy-E",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:7B4hKK0S9QYnaoqa9OuwgX"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2glPhGd3WXbnNttSdOOr2e"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2glPhGd3WXbnNttSdOOr2e",
+                "id" : "2glPhGd3WXbnNttSdOOr2e",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b27374bdcb13ad3968879ad6b8d7",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e0274bdcb13ad3968879ad6b8d7",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d0000485174bdcb13ad3968879ad6b8d7",
+                  "width" : 64
+                } ],
+                "name" : "Eazy-Duz-It",
+                "release_date" : "1988-09-13",
+                "release_date_precision" : "day",
+                "total_tracks" : 14,
+                "type" : "album",
+                "uri" : "spotify:album:2glPhGd3WXbnNttSdOOr2e"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/7B4hKK0S9QYnaoqa9OuwgX"
+                },
+                "href" : "https://api.spotify.com/v1/artists/7B4hKK0S9QYnaoqa9OuwgX",
+                "id" : "7B4hKK0S9QYnaoqa9OuwgX",
+                "name" : "Eazy-E",
+                "type" : "artist",
+                "uri" : "spotify:artist:7B4hKK0S9QYnaoqa9OuwgX"
+              }, {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6DPYiyq5kWVQS4RGwxzPC7"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6DPYiyq5kWVQS4RGwxzPC7",
+                "id" : "6DPYiyq5kWVQS4RGwxzPC7",
+                "name" : "Dr. Dre",
+                "type" : "artist",
+                "uri" : "spotify:artist:6DPYiyq5kWVQS4RGwxzPC7"
+              }, {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/4fbyGOEjViyE97W58eGEgU"
+                },
+                "href" : "https://api.spotify.com/v1/artists/4fbyGOEjViyE97W58eGEgU",
+                "id" : "4fbyGOEjViyE97W58eGEgU",
+                "name" : "MC Ren",
+                "type" : "artist",
+                "uri" : "spotify:artist:4fbyGOEjViyE97W58eGEgU"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 259493,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USPO10000854"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/1ohwrBQrxIlqMYfkoYERiN"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/1ohwrBQrxIlqMYfkoYERiN",
+              "id" : "1ohwrBQrxIlqMYfkoYERiN",
+              "is_local" : false,
+              "name" : "Eazy-Duz-It",
+              "popularity" : 57,
+              "preview_url" : null,
+              "track_number" : 6,
+              "type" : "track",
+              "uri" : "spotify:track:1ohwrBQrxIlqMYfkoYERiN"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:46Z",
+            "track" : {
+              "album" : {
+                "album_type" : "compilation",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/4EnEZVjo3w1cwcQYePccay"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/4EnEZVjo3w1cwcQYePccay",
+                  "id" : "4EnEZVjo3w1cwcQYePccay",
+                  "name" : "N.W.A.",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:4EnEZVjo3w1cwcQYePccay"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/5fPat8IjkbKuwk27MTQIWy"
+                },
+                "href" : "https://api.spotify.com/v1/albums/5fPat8IjkbKuwk27MTQIWy",
+                "id" : "5fPat8IjkbKuwk27MTQIWy",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b27308a611d441af018b582009dd",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e0208a611d441af018b582009dd",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d0000485108a611d441af018b582009dd",
+                  "width" : 64
+                } ],
+                "name" : "N.W.A. And The Posse",
+                "release_date" : "1987-01-01",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:5fPat8IjkbKuwk27MTQIWy"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/7B4hKK0S9QYnaoqa9OuwgX"
+                },
+                "href" : "https://api.spotify.com/v1/artists/7B4hKK0S9QYnaoqa9OuwgX",
+                "id" : "7B4hKK0S9QYnaoqa9OuwgX",
+                "name" : "Eazy-E",
+                "type" : "artist",
+                "uri" : "spotify:artist:7B4hKK0S9QYnaoqa9OuwgX"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 339893,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USPO18700101"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5RGXoZt1qxmAErdhbyKJKq"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5RGXoZt1qxmAErdhbyKJKq",
+              "id" : "5RGXoZt1qxmAErdhbyKJKq",
+              "is_local" : false,
+              "name" : "Boyz-N-The-Hood",
+              "popularity" : 68,
+              "preview_url" : null,
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:5RGXoZt1qxmAErdhbyKJKq"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:19Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                  "id" : "5a2EaR3hamoenG9rDuVn8j",
+                  "name" : "Prince",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/3U1ht9EdWEI9nMvaqdQI67"
+                },
+                "href" : "https://api.spotify.com/v1/albums/3U1ht9EdWEI9nMvaqdQI67",
+                "id" : "3U1ht9EdWEI9nMvaqdQI67",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2734117e531f63855d072059d6e",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e024117e531f63855d072059d6e",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048514117e531f63855d072059d6e",
+                  "width" : 64
+                } ],
+                "name" : "1999",
+                "release_date" : "1982-10-27",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:3U1ht9EdWEI9nMvaqdQI67"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                },
+                "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                "id" : "5a2EaR3hamoenG9rDuVn8j",
+                "name" : "Prince",
+                "type" : "artist",
+                "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 296906,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USWB10003038"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/4iozhXt27eMl39W5z7R8H6"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/4iozhXt27eMl39W5z7R8H6",
+              "id" : "4iozhXt27eMl39W5z7R8H6",
+              "is_local" : false,
+              "name" : "Little Red Corvette",
+              "popularity" : 56,
+              "preview_url" : "https://p.scdn.co/mp3-preview/91b103aa0668136885defd6b3caed00b5aa9993d?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 2,
+              "type" : "track",
+              "uri" : "spotify:track:4iozhXt27eMl39W5z7R8H6"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:09Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                  "id" : "5a2EaR3hamoenG9rDuVn8j",
+                  "name" : "Prince",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/3U1ht9EdWEI9nMvaqdQI67"
+                },
+                "href" : "https://api.spotify.com/v1/albums/3U1ht9EdWEI9nMvaqdQI67",
+                "id" : "3U1ht9EdWEI9nMvaqdQI67",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2734117e531f63855d072059d6e",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e024117e531f63855d072059d6e",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048514117e531f63855d072059d6e",
+                  "width" : 64
+                } ],
+                "name" : "1999",
+                "release_date" : "1982-10-27",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:3U1ht9EdWEI9nMvaqdQI67"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                },
+                "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                "id" : "5a2EaR3hamoenG9rDuVn8j",
+                "name" : "Prince",
+                "type" : "artist",
+                "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 379266,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB18200028"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/2H7PHVdQ3mXqEHXcvclTB0"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/2H7PHVdQ3mXqEHXcvclTB0",
+              "id" : "2H7PHVdQ3mXqEHXcvclTB0",
+              "is_local" : false,
+              "name" : "1999",
+              "popularity" : 68,
+              "preview_url" : "https://p.scdn.co/mp3-preview/a9e29b17391150efb9a933faf491db7ea17f8274?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:2H7PHVdQ3mXqEHXcvclTB0"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:07Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                  "id" : "5a2EaR3hamoenG9rDuVn8j",
+                  "name" : "Prince",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/5FbrTPPlaNSOsChhKUZxcu"
+                },
+                "href" : "https://api.spotify.com/v1/albums/5FbrTPPlaNSOsChhKUZxcu",
+                "id" : "5FbrTPPlaNSOsChhKUZxcu",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273214f0bd9dc1ed0c65ae81760",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02214f0bd9dc1ed0c65ae81760",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851214f0bd9dc1ed0c65ae81760",
+                  "width" : 64
+                } ],
+                "name" : "Around the World in a Day",
+                "release_date" : "1985-04-22",
+                "release_date_precision" : "day",
+                "total_tracks" : 9,
+                "type" : "album",
+                "uri" : "spotify:album:5FbrTPPlaNSOsChhKUZxcu"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                },
+                "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                "id" : "5a2EaR3hamoenG9rDuVn8j",
+                "name" : "Prince",
+                "type" : "artist",
+                "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 215173,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB19902876"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5jSz894ljfWE0IcHBSM39i"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5jSz894ljfWE0IcHBSM39i",
+              "id" : "5jSz894ljfWE0IcHBSM39i",
+              "is_local" : false,
+              "name" : "Raspberry Beret",
+              "popularity" : 71,
+              "preview_url" : "https://p.scdn.co/mp3-preview/80cd007d427fcfd8c9a9139cfc4fd7b20bfead4c?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 4,
+              "type" : "track",
+              "uri" : "spotify:track:5jSz894ljfWE0IcHBSM39i"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:54:01Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                  "id" : "5a2EaR3hamoenG9rDuVn8j",
+                  "name" : "Prince",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7nXJ5k4XgRj5OLg9m8V3zc"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7nXJ5k4XgRj5OLg9m8V3zc",
+                "id" : "7nXJ5k4XgRj5OLg9m8V3zc",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273d52bfb90ee8dfeda8378b99b",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02d52bfb90ee8dfeda8378b99b",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851d52bfb90ee8dfeda8378b99b",
+                  "width" : 64
+                } ],
+                "name" : "Purple Rain",
+                "release_date" : "1984-06-25",
+                "release_date_precision" : "day",
+                "total_tracks" : 9,
+                "type" : "album",
+                "uri" : "spotify:album:7nXJ5k4XgRj5OLg9m8V3zc"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/5a2EaR3hamoenG9rDuVn8j"
+                },
+                "href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j",
+                "id" : "5a2EaR3hamoenG9rDuVn8j",
+                "name" : "Prince",
+                "type" : "artist",
+                "uri" : "spotify:artist:5a2EaR3hamoenG9rDuVn8j"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 520786,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10001880"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/54X78diSLoUDI3joC2bjMz"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/54X78diSLoUDI3joC2bjMz",
+              "id" : "54X78diSLoUDI3joC2bjMz",
+              "is_local" : false,
+              "name" : "Purple Rain",
+              "popularity" : 75,
+              "preview_url" : "https://p.scdn.co/mp3-preview/2fe008411edea4f21355301daa8993663eaf46f8?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 9,
+              "type" : "track",
+              "uri" : "spotify:track:54X78diSLoUDI3joC2bjMz"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:53:39Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                  "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                  "name" : "Michael Jackson",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2ANVost0y2y52ema1E9xAZ",
+                "id" : "2ANVost0y2y52ema1E9xAZ",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273de437d960dda1ac0a3586d97",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02de437d960dda1ac0a3586d97",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97",
+                  "width" : 64
+                } ],
+                "name" : "Thriller",
+                "release_date" : "1982-11-30",
+                "release_date_precision" : "day",
+                "total_tracks" : 9,
+                "type" : "album",
+                "uri" : "spotify:album:2ANVost0y2y52ema1E9xAZ"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                "name" : "Michael Jackson",
+                "type" : "artist",
+                "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 363400,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USSM19902986"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/1hu2s7qkm5bo03eODpRQO3"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/1hu2s7qkm5bo03eODpRQO3",
+              "id" : "1hu2s7qkm5bo03eODpRQO3",
+              "is_local" : false,
+              "name" : "Wanna Be Startin' Somethin'",
+              "popularity" : 55,
+              "preview_url" : "https://p.scdn.co/mp3-preview/1cf257e961442bb7eb36437322df73de7260f685?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:1hu2s7qkm5bo03eODpRQO3"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:53:31Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                  "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                  "name" : "Michael Jackson",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2ANVost0y2y52ema1E9xAZ",
+                "id" : "2ANVost0y2y52ema1E9xAZ",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273de437d960dda1ac0a3586d97",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02de437d960dda1ac0a3586d97",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97",
+                  "width" : 64
+                } ],
+                "name" : "Thriller",
+                "release_date" : "1982-11-30",
+                "release_date_precision" : "day",
+                "total_tracks" : 9,
+                "type" : "album",
+                "uri" : "spotify:album:2ANVost0y2y52ema1E9xAZ"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                "name" : "Michael Jackson",
+                "type" : "artist",
+                "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 294226,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USSM19902991"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/7J1uxwnxfQLu4APicE5Rnj"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/7J1uxwnxfQLu4APicE5Rnj",
+              "id" : "7J1uxwnxfQLu4APicE5Rnj",
+              "is_local" : false,
+              "name" : "Billie Jean",
+              "popularity" : 59,
+              "preview_url" : "https://p.scdn.co/mp3-preview/14a1ddedf05a15ad0ac11ce28b40ea1a15fabd20?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 6,
+              "type" : "track",
+              "uri" : "spotify:track:7J1uxwnxfQLu4APicE5Rnj"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:53:27Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                  "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                  "name" : "Michael Jackson",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2ANVost0y2y52ema1E9xAZ",
+                "id" : "2ANVost0y2y52ema1E9xAZ",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273de437d960dda1ac0a3586d97",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02de437d960dda1ac0a3586d97",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97",
+                  "width" : 64
+                } ],
+                "name" : "Thriller",
+                "release_date" : "1982-11-30",
+                "release_date_precision" : "day",
+                "total_tracks" : 9,
+                "type" : "album",
+                "uri" : "spotify:album:2ANVost0y2y52ema1E9xAZ"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                "name" : "Michael Jackson",
+                "type" : "artist",
+                "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 258399,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USSM19902990"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3BovdzfaX4jb5KFQwoPfAw"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3BovdzfaX4jb5KFQwoPfAw",
+              "id" : "3BovdzfaX4jb5KFQwoPfAw",
+              "is_local" : false,
+              "name" : "Beat It - Single Version",
+              "popularity" : 58,
+              "preview_url" : "https://p.scdn.co/mp3-preview/0c5daa956ae12cb073d20340a60501c4b8351152?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 5,
+              "type" : "track",
+              "uri" : "spotify:track:3BovdzfaX4jb5KFQwoPfAw"
+            }
+          }, {
+            "added_at" : "2020-09-16T20:53:26Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                  "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                  "name" : "Michael Jackson",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2ANVost0y2y52ema1E9xAZ",
+                "id" : "2ANVost0y2y52ema1E9xAZ",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273de437d960dda1ac0a3586d97",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02de437d960dda1ac0a3586d97",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97",
+                  "width" : 64
+                } ],
+                "name" : "Thriller",
+                "release_date" : "1982-11-30",
+                "release_date_precision" : "day",
+                "total_tracks" : 9,
+                "type" : "album",
+                "uri" : "spotify:album:2ANVost0y2y52ema1E9xAZ"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3fMbdgg4jU18AjLCKBhRSm",
+                "id" : "3fMbdgg4jU18AjLCKBhRSm",
+                "name" : "Michael Jackson",
+                "type" : "artist",
+                "uri" : "spotify:artist:3fMbdgg4jU18AjLCKBhRSm"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 357800,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USSM19902989"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/2LlQb7Uoj1kKyGhlkBf9aC"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/2LlQb7Uoj1kKyGhlkBf9aC",
+              "id" : "2LlQb7Uoj1kKyGhlkBf9aC",
+              "is_local" : false,
+              "name" : "Thriller",
+              "popularity" : 59,
+              "preview_url" : "https://p.scdn.co/mp3-preview/ce952e03f2bc0daec0a672377e3db6059f8dfa48?cid=a0f08888138f498596c95802c23eb407",
+              "track_number" : 4,
+              "type" : "track",
+              "uri" : "spotify:track:2LlQb7Uoj1kKyGhlkBf9aC"
+            }
+          } ],
+          "limit" : 50,
+          "next" : null,
+          "offset" : 1,
+          "previous" : "https://api.spotify.com/v1/me/tracks?offset=0&limit=50",
+          "total" : 13
+        }
+  recorded_at: Wed, 16 Sep 2020 23:21:35 GMT
+recorded_with: VCR 6.0.0

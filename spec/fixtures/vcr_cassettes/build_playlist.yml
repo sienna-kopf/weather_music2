@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.spotify.com/v1/playlists/3uHq031U3nHm6hRgjHtY9j/tracks?uris=spotify:track:4aOjDKk1s5hlsEY5ZhhX3l,spotify:track:12G1TYIfbpvC0mdFFn4Pbg,spotify:track:5LxvwujISqiB8vpRYv887S,spotify:track:3ZgQhe1Sv7mnQjpVTJnOFp,spotify:track:6gJdDnF2TzfA1WPMXuCa3x,spotify:track:3kk66lcmo2blwB1uLHMkPJ,spotify:track:3vkQ5DAB1qQMYO4Mr9zJN6,spotify:track:1i0kVfX5LdEdo52St39QM0,spotify:track:0XRbYXQUymj9SJkrr8YK5B,spotify:track:5jbKpvtoxZB14tbnBafMuL,spotify:track:7KFThZQCAcj8JXdPRtdrXE,spotify:track:3EYOJ48Et32uATr9ZmLnAo,spotify:track:1x9iOd3K1JC6tdjGZJpFgZ,spotify:track:0QeI79sp1vS8L3JgpEO7mD,spotify:track:4qan0qNCFAEu6A2hcwPETn,spotify:track:4uNFNCCK5O3mtUJ6gcW9Gx,spotify:track:0hioWv2FDtVePjHFTwgrf7,spotify:track:0LWkaEyQRkF0XAms8Bg1fC,spotify:track:2vytyWClpsahqcL6NibSE3,spotify:track:1jRzdY7oUBOhrylNtiMtBD
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer BQC2UxsMlnHAzDviAMtJtUw3jRCbzmUyFqv_Uo0EYwGWwvxV5ISrymRwnX0kt7OnO7Efjx4UWCwKO4vE6dIXMxH4OKJzb6lurlWG4KWNAwYUnjuJIzS4ajaxDaHVJuzib2tXnxWNyFukyrUXPrpct4llFD3n9aUJaP0TPrsQaeYRg5c7sieFgVKvho3VwjAGSwuhKWbXMx-0f58IkUKZBLJ6ZKQ_-r86KPi-H5gPP3Y
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Wed, 16 Sep 2020 23:21:35 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "snapshot_id" : "NSxhMmEwZDg4MjM1M2M0YjdmMDVmODgwNjY4NTE4YjJiOGY5ZDk4ODVh"
+        }
+  recorded_at: Wed, 16 Sep 2020 23:21:35 GMT
+recorded_with: VCR 6.0.0

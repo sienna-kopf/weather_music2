@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.spotify.com/v1/users/3k89wfolhun8eo7wehmnmjli0/playlists
+    body:
+      encoding: UTF-8
+      string: '{"name":"party time","public":false}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer BQC2UxsMlnHAzDviAMtJtUw3jRCbzmUyFqv_Uo0EYwGWwvxV5ISrymRwnX0kt7OnO7Efjx4UWCwKO4vE6dIXMxH4OKJzb6lurlWG4KWNAwYUnjuJIzS4ajaxDaHVJuzib2tXnxWNyFukyrUXPrpct4llFD3n9aUJaP0TPrsQaeYRg5c7sieFgVKvho3VwjAGSwuhKWbXMx-0f58IkUKZBLJ6ZKQ_-r86KPi-H5gPP3Y
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Location:
+      - https://api.spotify.com/v1/playlists/06WlRO6eZncqEz45eoas8S
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Wed, 16 Sep 2020 23:21:35 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "collaborative" : false,
+          "description" : null,
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/playlist/06WlRO6eZncqEz45eoas8S"
+          },
+          "followers" : {
+            "href" : null,
+            "total" : 0
+          },
+          "href" : "https://api.spotify.com/v1/playlists/06WlRO6eZncqEz45eoas8S",
+          "id" : "06WlRO6eZncqEz45eoas8S",
+          "images" : [ ],
+          "name" : "party time",
+          "owner" : {
+            "display_name" : "Ashkan",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/user/3k89wfolhun8eo7wehmnmjli0"
+            },
+            "href" : "https://api.spotify.com/v1/users/3k89wfolhun8eo7wehmnmjli0",
+            "id" : "3k89wfolhun8eo7wehmnmjli0",
+            "type" : "user",
+            "uri" : "spotify:user:3k89wfolhun8eo7wehmnmjli0"
+          },
+          "primary_color" : null,
+          "public" : false,
+          "snapshot_id" : "MSxiYzI2NzJhZTZjOTE2Yjg2MzZiOWU4YjY5ZGM1OGUwMGQ0MzRjMDFj",
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/playlists/06WlRO6eZncqEz45eoas8S/tracks",
+            "items" : [ ],
+            "limit" : 100,
+            "next" : null,
+            "offset" : 0,
+            "previous" : null,
+            "total" : 0
+          },
+          "type" : "playlist",
+          "uri" : "spotify:playlist:06WlRO6eZncqEz45eoas8S"
+        }
+  recorded_at: Wed, 16 Sep 2020 23:21:35 GMT
+recorded_with: VCR 6.0.0
