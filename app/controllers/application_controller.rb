@@ -27,14 +27,14 @@ class ApplicationController < Sinatra::Base
 
   # "/add_playlist_to_library" path methods
 
-  def playlist(playlist_name, user_id, tracks_collection, token)
-    serialize_playlist(fill_playlist(playlist_name, user_id, tracks_collection, token), create_playlist(playlist_name, user_id, token))
+  def playlist(playlist_name, user_id, track_list, token)
+    serialize_playlist(fill_playlist(playlist_name, user_id, track_list, token), create_playlist(playlist_name, user_id, token))
   end
 
-  def fill_playlist(playlist_name, user_id, tracks_collection, token)
+  def fill_playlist(playlist_name, user_id, track_list, token)
     SpotifyService.new.fill_playlist(
       create_playlist(playlist_name, user_id, token)[:id],
-      parse_tracks(tracks_collection),
+      track_list,
       token)
   end
 
@@ -74,10 +74,6 @@ class ApplicationController < Sinatra::Base
 
   def weather_success?(weather_response)
     weather_response[:cod] == 200
-  end
-
-  def parse_tracks(tracks_collection)
-    JSON.parse(tracks_collection).join(",")
   end
 
   def create_tracks(result)
