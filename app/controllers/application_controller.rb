@@ -45,58 +45,62 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  def normalization_formula(min, max, val)
+    [0, [1, (val - min) / (max - min)].min].max
+  end
+
+  def average(val_1, val_2)
+    (val_1 + val_2) / 2
+  end
+
+  def minor_or_major(target)
+    target < 0.5 ? 0 : 1
+  end
+
   def target_valence(forecast)
     max = 116.0
     min = 0.0
-    val = forecast.temp.to_f
-    [0, [1, (val - min) / (max - min)].min].max.round(1)
+    normalization_formula(max, min, forecast.temp.to_f).round(1)
   end
 
   def target_speech(forecast)
     max = 36.0
     min = 0.0
-    val = forecast.wind
-    [0, [1, (val - min) / (max - min)].min].max.round(1)
+    normalization_formula(max, min, forecast.wind).round(1)
   end
 
   def target_mode(forecast)
     max_temp = 134.0
     min_temp = 0.0
-    temp_val = forecast.temp.to_f
-    target_temp = [0, [1, (temp_val - min_temp) / (max_temp - min_temp)].min].max
+    target_temp = normalization_formula(max_temp, min_temp, forecast.temp.to_f)
 
     max_humidity = 0.0
     min_humidity = 100.0
-    humidity_val = forecast.humidity.to_f
-    target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
-    target = ((target_temp + target_humidity) / 2)
-    if target < 0.5
-      return 0
-    else
-      return 1
-    end
+    target_humidity = normalization_formula(max_humidity, min_humidity, forecast.humidity.to_f)
+
+    minor_or_major(average(target_temp, target_humidity))
   end
 
   def target_energy(forecast)
     max_temp = 134.0
     min_temp = 0.0
-    temp_val = forecast.temp.to_f
-    target_temp = [0, [1, (temp_val - min_temp) / (max_temp - min_temp)].min].max
+    target_temp = normalization_formula(max_temp, min_temp, forecast.temp.to_f)
 
     max_humidity = 0.0
     min_humidity = 100.0
-    humidity_val = forecast.humidity.to_f
-    target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
-    ((target_temp + target_humidity) / 2).round(1)
+    target_humidity = normalization_formula(max_humidity, min_humidity, forecast.humidity.to_f)
+    average(target_temp, target_humidity).round(1)
   end
 
   def target_tempo(forecast)
     max = 36.0
     min = 0.0
-    val = forecast.wind
-    target_temp = [0, [1, (val - min) / (max - min)].min].max
-    range = 480
-    (target_temp * range).round(2)
+    target_temp = normalization_formula(max, min, forecast.wind)
+    ratio_scale(target_temp, 480).round(2)
+  end
+
+  def ratio_scale(decimal, range)
+    decimal * range
   end
 
   def weather_success?(weather_response)
