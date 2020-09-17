@@ -10,11 +10,11 @@ class SpotifyService
   def weather_tracks_first_50(token)
     to_json_tracks("?offset=1&limit=50", token)
   end
-  
+
   def create_playlist(playlist_name, user_id, token)
     conn_user(token, playlist_name, user_id)
   end
-  
+
   def fill_playlist(playlist_id, track_uris, token)
     conn_playlist(playlist_id, track_uris, token)
   end
@@ -22,11 +22,11 @@ class SpotifyService
   def genres(token)
     to_json_rec("available-genre-seeds", token)
   end
-  
-  def create_genre_track_list(target_valence, target_speech, target_mode, target_energy, target_tempo, seed_genres, token) 
+
+  def create_genre_track_list(target_valence, target_speech, target_mode, target_energy, target_tempo, seed_genres, token)
     to_json_rec("?seed_genres=#{seed_genres}&target_valence=#{target_valence}&target_speechiness=#{target_speech}&target_energy=#{target_energy}&target_mode=#{target_mode}&target_tempo=#{target_tempo}", token)
-  end 
-  
+  end
+
   private
 
   def conn_rec(token)

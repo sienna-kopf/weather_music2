@@ -3,9 +3,9 @@ require 'spec_helper'
 RSpec.describe SpotifyService do
   describe 'create track list method' do
     before :each do
-      @token = "BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk"
-      @playlist_id = "5YnwnP9mXOMAU0I8mP5WC2"
-      @user_id = "bosigp0djzqxoyj6yq6sdzzaq"
+      @token = "BQBggPQkOHz1gE6KSpSOdEdIqgzx5tkEpvBZk6Yq9DFs5uIuNJR7_sbWydi_azoWYMG3GRGGkaANkzb6dSo3vmQFapIgHJcDVSBqi4NJ2S80d9Zo5W85V2JDozobA9Xsn4Q-DjfRBF40jMyGXewWlnG_s8bGY5ZhwfIsdYSuCyV9Cak0Y2nngE4TaeucKMiOkNvrW_PnufHbyV6GbgfPzQtobUM"
+      @playlist_id = "0HvaOJCC9uESRn04SwVIf9"
+      @user_id = "1270051882"
       @service = SpotifyService.new
     end
     it 'generates 20 tracks based off of seed tracks and target values' do

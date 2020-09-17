@@ -12,6 +12,6 @@ class WeatherMusicController < ApplicationController
   end
 
   post "/add_playlist_to_library" do
-    playlist(params[:q], params[:main_description], params[:user_id], params[:tracks], params[:token])
+    playlist(params[:playlist_name], params[:user_id], params[:tracks], params[:token])
   end
 end

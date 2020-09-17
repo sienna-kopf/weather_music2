@@ -6,8 +6,8 @@ end
 
 describe WeatherMusicController do
   before :each do
-    @token = "BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk"
-    @user_id = "bosigp0djzqxoyj6yq6sdzzaq"
+    @token = "BQBJt3s6xuKb230wgBf7MO0PijTzGxX4OoiD-T_bHSbtEPSDAKiEOww9rc3Ow0XeMKCs1hwIWu1VZohED8mAvaAM3BnJN2jTmH5Kqa9k0Lka2XikYP8m40Vo7Pt2DG6hgjahZljGm62nrrK17tsPmDioAekElbj4N_h7g1ReKUQLFWtBEc3JVNjUVwhCy3ZdIRKomr6PziUAWsMFqns1RGbdcXg"
+    @user_id = "1270051882"
   end
   describe 'get requests' do
     describe '/weather_playlist' do
@@ -16,8 +16,8 @@ describe WeatherMusicController do
           location = "denver, co, usa"
           get "/weather_playlist?units=imperial&q=#{location}&token=#{@token}"
 
-          expect(last_response).to be_successful
           last_response.content_type == "application/json"
+          expect(last_response).to be_successful
 
           weather = JSON.parse(last_response.body, symbolize_names: true)
 

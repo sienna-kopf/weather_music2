@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq/playlists
+    uri: https://api.spotify.com/v1/users/1270051882/playlists
     body:
       encoding: UTF-8
       string: '{"name":"its a great day for clouds weather in paris","public":false}'
@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk
+      - Bearer BQBggPQkOHz1gE6KSpSOdEdIqgzx5tkEpvBZk6Yq9DFs5uIuNJR7_sbWydi_azoWYMG3GRGGkaANkzb6dSo3vmQFapIgHJcDVSBqi4NJ2S80d9Zo5W85V2JDozobA9Xsn4Q-DjfRBF40jMyGXewWlnG_s8bGY5ZhwfIsdYSuCyV9Cak0Y2nngE4TaeucKMiOkNvrW_PnufHbyV6GbgfPzQtobUM
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/5gC79h7DUrnArVq0kHpRxa
+      - https://api.spotify.com/v1/playlists/310I5oaEeePmxiBCx3usrX
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -46,7 +46,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 00:31:19 GMT
+      - Thu, 17 Sep 2020 02:02:03 GMT
       Server:
       - envoy
       Via:
@@ -62,31 +62,31 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/5gC79h7DUrnArVq0kHpRxa"
+            "spotify" : "https://open.spotify.com/playlist/310I5oaEeePmxiBCx3usrX"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/5gC79h7DUrnArVq0kHpRxa",
-          "id" : "5gC79h7DUrnArVq0kHpRxa",
+          "href" : "https://api.spotify.com/v1/playlists/310I5oaEeePmxiBCx3usrX",
+          "id" : "310I5oaEeePmxiBCx3usrX",
           "images" : [ ],
           "name" : "its a great day for clouds weather in paris",
           "owner" : {
-            "display_name" : "Theawulff",
+            "display_name" : "Neeru Ram",
             "external_urls" : {
-              "spotify" : "https://open.spotify.com/user/bosigp0djzqxoyj6yq6sdzzaq"
+              "spotify" : "https://open.spotify.com/user/1270051882"
             },
-            "href" : "https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq",
-            "id" : "bosigp0djzqxoyj6yq6sdzzaq",
+            "href" : "https://api.spotify.com/v1/users/1270051882",
+            "id" : "1270051882",
             "type" : "user",
-            "uri" : "spotify:user:bosigp0djzqxoyj6yq6sdzzaq"
+            "uri" : "spotify:user:1270051882"
           },
           "primary_color" : null,
           "public" : false,
-          "snapshot_id" : "MSwyMzAwZDgyODYyMzIzM2NiZjE0OGJlMTljYTE4ZmFmZTcyZjFlMTc1",
+          "snapshot_id" : "MSxhZmZhZDE5ZTQzNzczZGY4YWUwNWE1OWUyOWM2MWVjOTNkNTc0NDM1",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/5gC79h7DUrnArVq0kHpRxa/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/310I5oaEeePmxiBCx3usrX/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -95,12 +95,12 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:5gC79h7DUrnArVq0kHpRxa"
+          "uri" : "spotify:playlist:310I5oaEeePmxiBCx3usrX"
         }
-  recorded_at: Thu, 17 Sep 2020 00:31:20 GMT
+  recorded_at: Thu, 17 Sep 2020 02:02:03 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/playlists/5gC79h7DUrnArVq0kHpRxa/tracks?uris=spotify:track:4mYG4iHgfxlPaqfT3BQ0ec,spotify:track:1Bj6YgjjPbEb4jhQ50T8tJ,spotify:track:6qspW4YKycviDFjHBOaqUY,spotify:track:12G1TYIfbpvC0mdFFn4Pbg,spotify:track:6gJdDnF2TzfA1WPMXuCa3x,spotify:track:7sJN693sYKEIEMu7fc5VnJ,spotify:track:2vytyWClpsahqcL6NibSE3,spotify:track:4Yenz5JZZOUiZSeyKY8bDz,spotify:track:3jpaB4JCMidb5XshQtDSGm,spotify:track:7KFThZQCAcj8JXdPRtdrXE,spotify:track:5vWwuFTSoPdyY8rH1mui8W,spotify:track:4o6BgsqLIBViaGVbx5rbRk,spotify:track:24PWKmemCvqfyVXODhoKHW,spotify:track:4O4Z8VFczL8MxIOmqVWc1b,spotify:track:3whRKAOlJ0M3banzcChvQv,spotify:track:4aOjDKk1s5hlsEY5ZhhX3l,spotify:track:5krOROgmf8adn3SJzeKLZy,spotify:track:0qRR9d89hIS0MHRkQ0ejxX,spotify:track:5LxvwujISqiB8vpRYv887S,spotify:track:1GrikfH0jDejDvrxo84n4P
+    uri: https://api.spotify.com/v1/playlists/310I5oaEeePmxiBCx3usrX/tracks?uris=spotify:track:4mYG4iHgfxlPaqfT3BQ0ec,spotify:track:1Bj6YgjjPbEb4jhQ50T8tJ,spotify:track:6qspW4YKycviDFjHBOaqUY,spotify:track:12G1TYIfbpvC0mdFFn4Pbg,spotify:track:6gJdDnF2TzfA1WPMXuCa3x,spotify:track:7sJN693sYKEIEMu7fc5VnJ,spotify:track:2vytyWClpsahqcL6NibSE3,spotify:track:4Yenz5JZZOUiZSeyKY8bDz,spotify:track:3jpaB4JCMidb5XshQtDSGm,spotify:track:7KFThZQCAcj8JXdPRtdrXE,spotify:track:5vWwuFTSoPdyY8rH1mui8W,spotify:track:4o6BgsqLIBViaGVbx5rbRk,spotify:track:24PWKmemCvqfyVXODhoKHW,spotify:track:4O4Z8VFczL8MxIOmqVWc1b,spotify:track:3whRKAOlJ0M3banzcChvQv,spotify:track:4aOjDKk1s5hlsEY5ZhhX3l,spotify:track:5krOROgmf8adn3SJzeKLZy,spotify:track:0qRR9d89hIS0MHRkQ0ejxX,spotify:track:5LxvwujISqiB8vpRYv887S,spotify:track:1GrikfH0jDejDvrxo84n4P
     body:
       encoding: UTF-8
       string: ''
@@ -110,7 +110,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk
+      - Bearer BQBggPQkOHz1gE6KSpSOdEdIqgzx5tkEpvBZk6Yq9DFs5uIuNJR7_sbWydi_azoWYMG3GRGGkaANkzb6dSo3vmQFapIgHJcDVSBqi4NJ2S80d9Zo5W85V2JDozobA9Xsn4Q-DjfRBF40jMyGXewWlnG_s8bGY5ZhwfIsdYSuCyV9Cak0Y2nngE4TaeucKMiOkNvrW_PnufHbyV6GbgfPzQtobUM
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -144,7 +144,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 00:31:19 GMT
+      - Thu, 17 Sep 2020 02:02:03 GMT
       Server:
       - envoy
       Via:
@@ -157,7 +157,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "snapshot_id" : "MixkY2I4OTBkNThlYTk4MmE3OGUxZjgyYWRlNTAzZjFiYWI3NjFmMTQx"
+          "snapshot_id" : "MiwzZTVhMmYwZTlhMDM3ZjM5N2UyYjkyMDY0NzUzNGQzMzc2ZjI0OTkz"
         }
-  recorded_at: Thu, 17 Sep 2020 00:31:20 GMT
+  recorded_at: Thu, 17 Sep 2020 02:02:04 GMT
 recorded_with: VCR 6.0.0

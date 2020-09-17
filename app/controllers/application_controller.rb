@@ -11,132 +11,135 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  def playlist(location, weather_description, user_id, tracks_collection, token)
-    playlist_name = "its a great day for #{weather_description} weather in #{location}"
-    new_playlist = SpotifyService.new.create_playlist(playlist_name, user_id, token)
-    playlist_id = new_playlist[:id]
-    playlist_external_url = new_playlist[:external_urls][:spotify]
-    track_uris = JSON.parse(tracks_collection).join(",")
-    filled_playlist_status = SpotifyService.new.fill_playlist(playlist_id, track_uris, token)
-    PlaylistSerializer.new(filled_playlist_status, playlist_external_url).data_hash.to_json
-  end
-
   def serialization(weather_response, token)
     if weather_success?(weather_response)
-      forecast = Forecast.new(weather_response)    
-      response = SpotifyService.new.weather_tracks_first_50(token)
-      song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
-      five_ids = song_ids.take(5)
-      seed_tracks = five_ids.join(",")
-      result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
-      tracks = result[:tracks].map do |data|
-        Track.new(data)
-      end
-
-      WeatherMusicSerializer.new(forecast, tracks).data_hash.to_jso
-      if response[:items].count < 5
-        tracks = genre_route(token, forecast)
-        WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
-      else
-        tracks = songs_route(token, forecast, response)
-        # song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
-        # five_ids = song_ids.take(5)
-        # seed_tracks = five_ids.join(",")
-
-        # result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
-
-        # tracks = result[:tracks].map do |data|
-        #   Track.new(data)
-        # end
-        WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
-      end
-
+        if user_tracks(token)[:items].count < 5
+          genre_route(token, forecast(weather_response))
+        else
+          songs_route(token, forecast(weather_response), response)
+        end
     else
       WeatherMusicSerializer.new.no_city_response.to_json
     end
   end
 
-  def target_valence(forecast)
-    max = 116.0
-    min = 0.0
-    val = forecast.temp.to_f
-    [0, [1, (val - min) / (max - min)].min].max.round(1)
+  #playlist methods
+
+  def playlist(playlist_name, user_id, tracks_collection, token)
+    serialize_playlist(fill_playlist(playlist_name, user_id, tracks_collection, token), create_playlist(playlist_name, user_id, token))
   end
 
-  def target_speech(forecast)
-    max = 36.0
-    min = 0.0
-    val = forecast.wind
-
-    [0, [1, (val - min) / (max - min)].min].max.round(1)
+  def fill_playlist(playlist_name, user_id, tracks_collection, token)
+    SpotifyService.new.fill_playlist(
+      create_playlist(playlist_name, user_id, token)[:id],
+      parse_tracks(tracks_collection),
+      token)
   end
 
-  def target_mode(forecast)
-    max_temp = 134.0
-    min_temp = 0.0
-    temp_val = forecast.temp.to_f
-    target_temp = [0, [1, (temp_val - min_temp) / (max_temp - min_temp)].min].max
+  def create_playlist(playlist_name, user_id, token)
+    SpotifyService.new.create_playlist(playlist_name, user_id, token)
+  end
 
-    max_humidity = 0.0
-    min_humidity = 100.0
-    humidity_val = forecast.humidity.to_f
-    target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
+  #routes based on user library methods
 
-    target = ((target_temp + target_humidity) / 2)
-    if target < 0.5
-      return 0
-    else
-      return 1
+  def genre_route(token, forecast)
+    seed_genres = SpotifyService.new.genres(token)[:genres].shuffle.take(5).join(",")
+    result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)
+    serialize_weather_music(forecast, result)
+  end
+
+  def songs_route(token, forecast, response)
+    seed_tracks = response[:items].map {|item| item[:track][:id]}.shuffle.take(5).join(",")
+    result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
+    serialize_weather_music(forecast, result)
+  end
+
+  #helper methods
+
+  def parse_tracks(tracks_collection)
+    JSON.parse(tracks_collection).join(",")
+  end
+
+  def serialize_weather_music(forecast, result)
+    WeatherMusicSerializer.new(forecast, create_tracks(result)).data_hash.to_json
+  end
+
+  def create_tracks(result)
+    tracks = result[:tracks].map do |data|
+      Track.new(data)
     end
   end
 
-  def target_energy(forecast)
-    max_temp = 134.0
-    min_temp = 0.0
-    temp_val = forecast.temp.to_f
-    target_temp = [0, [1, (temp_val - min_temp) / (max_temp - min_temp)].min].max
-
-    max_humidity = 0.0
-    min_humidity = 100.0
-    humidity_val = forecast.humidity.to_f
-    target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
-
-    ((target_temp + target_humidity) / 2).round(1)
-  end
-
-  def target_tempo(forecast)
-    max = 36.0
-    min = 0.0
-    val = forecast.wind
-    target_temp = [0, [1, (val - min) / (max - min)].min].max
-    range = 480
-    (target_temp * range).round(2)
+  def user_tracks(token)
+    SpotifyService.new.weather_tracks_first_50(token)
   end
 
   def weather_success?(weather_response)
     weather_response[:cod] == 200
   end
 
-  def genre_route(token, forecast)
-    genres = SpotifyService.new.genres(token)
-    genres = genres[:genres].shuffle.take(5)
-    seed_genres = genres.join(",")
-    result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)    
-    tracks = result[:tracks].map do |data|
-      Track.new(data)
-    end
+  def serialize_playlist(status, new_playlist)
+    PlaylistSerializer.new(status, new_playlist[:external_urls][:spotify]).data_hash.to_json
   end
 
-  def songs_route(token, forecast, response)
-   
-    song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
-    five_ids = song_ids.take(5)
-    seed_tracks = five_ids.join(",")
+  def forecast(weather_response)
+    Forecast.new(weather_response)
+  end
 
-    result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
+  #weather methods
 
-    tracks = result[:tracks].map do |data|
-      Track.new(data)
-    end   
+  def normalization_formula(min, max, val)
+    [0, [1, (val - min) / (max - min)].min].max
+  end
+
+  def average(val_1, val_2)
+    (val_1 + val_2) / 2
+  end
+
+  def minor_or_major(target)
+    target < 0.5 ? 0 : 1
+  end
+
+  def target_valence(forecast)
+    max = 116.0
+    min = 0.0
+    normalization_formula(max, min, forecast.temp.to_f).round(1)
+  end
+
+  def target_speech(forecast)
+    max = 36.0
+    min = 0.0
+    normalization_formula(max, min, forecast.wind).round(1)
+  end
+
+  def target_mode(forecast)
+    max_temp = 134.0
+    min_temp = 0.0
+    target_temp = normalization_formula(max_temp, min_temp, forecast.temp.to_f)
+    max_humidity = 0.0
+    min_humidity = 100.0
+    target_humidity = normalization_formula(max_humidity, min_humidity, forecast.humidity.to_f)
+    minor_or_major(average(target_temp, target_humidity))
+  end
+
+  def target_energy(forecast)
+    max_temp = 134.0
+    min_temp = 0.0
+    target_temp = normalization_formula(max_temp, min_temp, forecast.temp.to_f)
+    max_humidity = 0.0
+    min_humidity = 100.0
+    target_humidity = normalization_formula(max_humidity, min_humidity, forecast.humidity.to_f)
+    average(target_temp, target_humidity).round(1)
+  end
+
+  def target_tempo(forecast)
+    max = 36.0
+    min = 0.0
+    target_temp = normalization_formula(max, min, forecast.wind)
+    ratio_scale(target_temp, 480).round(2)
+  end
+
+  def ratio_scale(decimal, range)
+    decimal * range
   end
 end
