@@ -15,11 +15,11 @@ class ApplicationController < Sinatra::Base
 
   def serialization(weather_response, token)
     if weather_success?(weather_response)
-        if user_tracks(token)[:items].count < 5
-          genre_route(token, forecast(weather_response))
-        else
-          songs_route(token, forecast(weather_response), user_tracks(token))
-        end
+      if user_tracks(token)[:items].count < 5
+        genre_route(token, forecast(weather_response))
+      else
+        songs_route(token, forecast(weather_response), user_tracks(token))
+      end
     else
       WeatherMusicSerializer.new.no_city_response.to_json
     end
@@ -104,6 +104,10 @@ class ApplicationController < Sinatra::Base
     target < 0.5 ? 0 : 1
   end
 
+  def ratio_scale(decimal, range)
+    decimal * range
+  end
+
   def target_valence(forecast)
     max = 116.0
     min = 0.0
@@ -141,9 +145,5 @@ class ApplicationController < Sinatra::Base
     min = 0.0
     target_temp = normalization_formula(max, min, forecast.wind)
     ratio_scale(target_temp, 480).round(2)
-  end
-
-  def ratio_scale(decimal, range)
-    decimal * range
   end
 end
