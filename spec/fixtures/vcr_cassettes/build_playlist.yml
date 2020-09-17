@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk
+      - Bearer BQDsKNYViB8eif9EaYLOxfU6D3P54qIuyh6TUdJAP9asvGsUeHZjil5oWg_8WCdDfhT8Ue6nfHVPshD9ft2pRCzO25ZyyR2uvHmf3vSq2yE5gxkDaNoAqBmora8kFXXXmK_XsHUsIZEZthy6-3T6oHVOFafWG6aP1YCIKplJdwFRN1wxvjsD3H3Wl73lI0U4-0j7A4803fjMs8WsWSgDqBuJvOX2ofbpQP755U_dfIJpNtg
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -46,7 +46,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 00:31:16 GMT
+      - Thu, 17 Sep 2020 16:24:31 GMT
       Server:
       - envoy
       Via:
@@ -59,7 +59,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "snapshot_id" : "NCxjNmJjNTdiMmZhMTE1NWU5NmZhZGU2YTAzZmRhY2NkNjAyMGJmMTVh"
+          "snapshot_id" : "MTEsN2M4YWRlMDM2OTcxZmFhZTc1YWI3ZjBiZTE5NDY1NDI3N2RjMTk2ZQ=="
         }
-  recorded_at: Thu, 17 Sep 2020 00:31:16 GMT
+  recorded_at: Thu, 17 Sep 2020 16:24:31 GMT
 recorded_with: VCR 6.0.0
