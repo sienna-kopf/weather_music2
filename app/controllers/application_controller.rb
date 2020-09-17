@@ -1,7 +1,6 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
-
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -23,34 +22,13 @@ class ApplicationController < Sinatra::Base
 
   def serialization(weather_response, token)
     if weather_success?(weather_response)
-      forecast = Forecast.new(weather_response)    
-      response = SpotifyService.new.weather_tracks_first_50(token)
-      song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
-      five_ids = song_ids.take(5)
-      seed_tracks = five_ids.join(",")
-      result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
-      tracks = result[:tracks].map do |data|
-        Track.new(data)
-      end
-
-      WeatherMusicSerializer.new(forecast, tracks).data_hash.to_jso
-      if response[:items].count < 5
-        tracks = genre_route(token, forecast)
-        WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
+      tracks = make_weather_setlist(token)
+      if tracks.count < 5
+        tracks = genre_route(token, Forecast.new(weather_response))
       else
-        tracks = songs_route(token, forecast, response)
-        # song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
-        # five_ids = song_ids.take(5)
-        # seed_tracks = five_ids.join(",")
-
-        # result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
-
-        # tracks = result[:tracks].map do |data|
-        #   Track.new(data)
-        # end
-        WeatherMusicSerializer.new(forecast, tracks).data_hash.to_json
+        tracks = songs_route(token, Forecast.new(weather_response), tracks)
       end
-
+        WeatherMusicSerializer.new(Forecast.new(weather_response), tracks).data_hash.to_json
     else
       WeatherMusicSerializer.new.no_city_response.to_json
     end
@@ -67,7 +45,6 @@ class ApplicationController < Sinatra::Base
     max = 36.0
     min = 0.0
     val = forecast.wind
-
     [0, [1, (val - min) / (max - min)].min].max.round(1)
   end
 
@@ -81,7 +58,6 @@ class ApplicationController < Sinatra::Base
     min_humidity = 100.0
     humidity_val = forecast.humidity.to_f
     target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
-
     target = ((target_temp + target_humidity) / 2)
     if target < 0.5
       return 0
@@ -100,7 +76,6 @@ class ApplicationController < Sinatra::Base
     min_humidity = 100.0
     humidity_val = forecast.humidity.to_f
     target_humidity = [0, [1, (humidity_val - min_humidity) / (max_humidity - min_humidity)].min].max
-
     ((target_temp + target_humidity) / 2).round(1)
   end
 
@@ -121,22 +96,25 @@ class ApplicationController < Sinatra::Base
     genres = SpotifyService.new.genres(token)
     genres = genres[:genres].shuffle.take(5)
     seed_genres = genres.join(",")
-    result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)    
-    tracks = result[:tracks].map do |data|
-      Track.new(data)
-    end
+    result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)
+    tracks = make_tracks(result[:tracks])
   end
 
   def songs_route(token, forecast, response)
-   
     song_ids = response[:items].map {|item| item[:track][:id]}.shuffle
     five_ids = song_ids.take(5)
     seed_tracks = five_ids.join(",")
-
     result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
+    tracks = make_tracks(result[:tracks])
+  end
 
-    tracks = result[:tracks].map do |data|
+  def make_weather_setlist(token)
+    response = SpotifyService.new.weather_tracks_first_50(token)
+  end
+
+  def make_tracks(songs)
+    tracks = songs.map do |data|
       Track.new(data)
-    end   
+    end
   end
 end
