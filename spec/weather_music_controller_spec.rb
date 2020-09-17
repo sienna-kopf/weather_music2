@@ -6,7 +6,7 @@ end
 
 describe WeatherMusicController do
   before :each do
-    @token = "BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk"
+    @token = "BQCHrtOKmJWiCnV-zRKzabTEFmyXxjEdUGhpgS6qG9qyKQGrxIyFtSGY21k2UqhVvX1hNfD-1LXE56A2imo2ncI5knVI4auHgBHgfN5Ch9Dmb2IF3OlWqloL9GsLJbY-GUJE0OXIBcjr5v9vAYxp9KmrB1fMSC6WRx1_KEMz9I1nOu0wU4H2HELEv1DTq3cfDafriiH4UziYI9CHAEyqmje6UgigEAaoUiK0vXDBhWtSIIs"
     @user_id = "bosigp0djzqxoyj6yq6sdzzaq"
   end
   describe 'get requests' do
