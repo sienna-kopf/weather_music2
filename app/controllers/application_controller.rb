@@ -10,14 +10,25 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  def playlist(location, weather_description, user_id, tracks_collection, token)
-    playlist_name = "its a great day for #{weather_description} weather in #{location}"
-    new_playlist = SpotifyService.new.create_playlist(playlist_name, user_id, token)
-    playlist_id = new_playlist[:id]
-    playlist_external_url = new_playlist[:external_urls][:spotify]
-    track_uris = JSON.parse(tracks_collection).join(",")
-    filled_playlist_status = SpotifyService.new.fill_playlist(playlist_id, track_uris, token)
-    PlaylistSerializer.new(filled_playlist_status, playlist_external_url).data_hash.to_json
+  def playlist(playlist_name, user_id, tracks_collection, token)
+    PlaylistSerializer.new(
+      fill_playlist(playlist_name, user_id, tracks_collection, token),
+      create_playlist(playlist_name, user_id, token)[:external_urls][:spotify]).data_hash.to_json
+  end
+
+  def fill_playlist(playlist_name, user_id, tracks_collection, token)
+    SpotifyService.new.fill_playlist(
+      create_playlist(playlist_name, user_id, token)[:id],
+      parse_tracks(tracks_collection),
+      token)
+  end
+
+  def create_playlist(playlist_name, user_id, token)
+    SpotifyService.new.create_playlist(playlist_name, user_id, token)
+  end
+
+  def parse_tracks(tracks_collection)
+    JSON.parse(tracks_collection).join(",")
   end
 
   def serialization(weather_response, token)
@@ -97,7 +108,7 @@ class ApplicationController < Sinatra::Base
     genres = genres[:genres].shuffle.take(5)
     seed_genres = genres.join(",")
     result = SpotifyService.new.create_genre_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_genres, token)
-    tracks = make_tracks(result[:tracks])
+    make_tracks(result[:tracks])
   end
 
   def songs_route(token, forecast, response)
@@ -105,15 +116,15 @@ class ApplicationController < Sinatra::Base
     five_ids = song_ids.take(5)
     seed_tracks = five_ids.join(",")
     result = SpotifyService.new.create_track_list(target_valence(forecast), target_speech(forecast), target_mode(forecast), target_energy(forecast), target_tempo(forecast), seed_tracks, token)
-    tracks = make_tracks(result[:tracks])
+    make_tracks(result[:tracks])
   end
 
   def make_weather_setlist(token)
-    response = SpotifyService.new.weather_tracks_first_50(token)
+    SpotifyService.new.weather_tracks_first_50(token)
   end
 
   def make_tracks(songs)
-    tracks = songs.map do |data|
+    songs.map do |data|
       Track.new(data)
     end
   end
