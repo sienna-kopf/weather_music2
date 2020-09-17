@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.spotify.com/v1/users/3k89wfolhun8eo7wehmnmjli0/playlists
+    uri: https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq/playlists
     body:
       encoding: UTF-8
       string: '{"name":"party time","public":false}'
@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQC2UxsMlnHAzDviAMtJtUw3jRCbzmUyFqv_Uo0EYwGWwvxV5ISrymRwnX0kt7OnO7Efjx4UWCwKO4vE6dIXMxH4OKJzb6lurlWG4KWNAwYUnjuJIzS4ajaxDaHVJuzib2tXnxWNyFukyrUXPrpct4llFD3n9aUJaP0TPrsQaeYRg5c7sieFgVKvho3VwjAGSwuhKWbXMx-0f58IkUKZBLJ6ZKQ_-r86KPi-H5gPP3Y
+      - Bearer BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/06WlRO6eZncqEz45eoas8S
+      - https://api.spotify.com/v1/playlists/4wqzD0V4xWHcsicoAReCp5
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -46,7 +46,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Wed, 16 Sep 2020 23:21:35 GMT
+      - Thu, 17 Sep 2020 00:17:40 GMT
       Server:
       - envoy
       Via:
@@ -62,31 +62,31 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/06WlRO6eZncqEz45eoas8S"
+            "spotify" : "https://open.spotify.com/playlist/4wqzD0V4xWHcsicoAReCp5"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/06WlRO6eZncqEz45eoas8S",
-          "id" : "06WlRO6eZncqEz45eoas8S",
+          "href" : "https://api.spotify.com/v1/playlists/4wqzD0V4xWHcsicoAReCp5",
+          "id" : "4wqzD0V4xWHcsicoAReCp5",
           "images" : [ ],
           "name" : "party time",
           "owner" : {
-            "display_name" : "Ashkan",
+            "display_name" : "Theawulff",
             "external_urls" : {
-              "spotify" : "https://open.spotify.com/user/3k89wfolhun8eo7wehmnmjli0"
+              "spotify" : "https://open.spotify.com/user/bosigp0djzqxoyj6yq6sdzzaq"
             },
-            "href" : "https://api.spotify.com/v1/users/3k89wfolhun8eo7wehmnmjli0",
-            "id" : "3k89wfolhun8eo7wehmnmjli0",
+            "href" : "https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq",
+            "id" : "bosigp0djzqxoyj6yq6sdzzaq",
             "type" : "user",
-            "uri" : "spotify:user:3k89wfolhun8eo7wehmnmjli0"
+            "uri" : "spotify:user:bosigp0djzqxoyj6yq6sdzzaq"
           },
           "primary_color" : null,
           "public" : false,
-          "snapshot_id" : "MSxiYzI2NzJhZTZjOTE2Yjg2MzZiOWU4YjY5ZGM1OGUwMGQ0MzRjMDFj",
+          "snapshot_id" : "MSxiMmY5NGY5NDM4ZjAyM2FmNzU0OTZhMmI4ZGVhMGNjZmRmMGZhMjI2",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/06WlRO6eZncqEz45eoas8S/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/4wqzD0V4xWHcsicoAReCp5/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -95,7 +95,7 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:06WlRO6eZncqEz45eoas8S"
+          "uri" : "spotify:playlist:4wqzD0V4xWHcsicoAReCp5"
         }
-  recorded_at: Wed, 16 Sep 2020 23:21:35 GMT
+  recorded_at: Thu, 17 Sep 2020 00:17:40 GMT
 recorded_with: VCR 6.0.0

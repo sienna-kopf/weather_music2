@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe SpotifyService do
   describe 'create track list method' do
     before :each do
-      @token = "BQC2UxsMlnHAzDviAMtJtUw3jRCbzmUyFqv_Uo0EYwGWwvxV5ISrymRwnX0kt7OnO7Efjx4UWCwKO4vE6dIXMxH4OKJzb6lurlWG4KWNAwYUnjuJIzS4ajaxDaHVJuzib2tXnxWNyFukyrUXPrpct4llFD3n9aUJaP0TPrsQaeYRg5c7sieFgVKvho3VwjAGSwuhKWbXMx-0f58IkUKZBLJ6ZKQ_-r86KPi-H5gPP3Y"
+      @token = "BQCpglj5j8_uXeZ7QfaTDVBXOw5ExFaLoCIL7Uhjc07ilhmjbphu_wJ8h3bXjqAhxniibPVYu55lLG48Pjd7_MM9AlAbPqMhLUSzkQ_s6EFPt8dHrj0OUSlhMNeUYyuz2j7x-hS3i1pGUL1_KrVjs0Ao2RRrA7LHWzheek2j15nqYZqRdz_Eob4jVyoIoiG1fF0N4RyFg_Ii_1Eu3ls0Yu8fAmd5eJNPhl3_-CDza5O-3xk"
       @service = SpotifyService.new
 
     end
@@ -36,7 +36,7 @@ RSpec.describe SpotifyService do
     it 'creates an empty playlist for user' do
       VCR.use_cassette("empty_playlist") do
         name = "party time"
-        user_id = "3k89wfolhun8eo7wehmnmjli0"
+        user_id = "bosigp0djzqxoyj6yq6sdzzaq"
         playlist = @service.create_playlist(name, user_id, @token)
 
         expect(playlist).to be_a(Hash)
@@ -48,7 +48,7 @@ RSpec.describe SpotifyService do
     end
     it 'builds playlist with 20 tracks' do
       VCR.use_cassette("build_playlist") do
-        playlist_id = "3uHq031U3nHm6hRgjHtY9j"
+        playlist_id = "5YnwnP9mXOMAU0I8mP5WC2"
         track_uris = "spotify:track:4aOjDKk1s5hlsEY5ZhhX3l,spotify:track:12G1TYIfbpvC0mdFFn4Pbg,spotify:track:5LxvwujISqiB8vpRYv887S,spotify:track:3ZgQhe1Sv7mnQjpVTJnOFp,spotify:track:6gJdDnF2TzfA1WPMXuCa3x,spotify:track:3kk66lcmo2blwB1uLHMkPJ,spotify:track:3vkQ5DAB1qQMYO4Mr9zJN6,spotify:track:1i0kVfX5LdEdo52St39QM0,spotify:track:0XRbYXQUymj9SJkrr8YK5B,spotify:track:5jbKpvtoxZB14tbnBafMuL,spotify:track:7KFThZQCAcj8JXdPRtdrXE,spotify:track:3EYOJ48Et32uATr9ZmLnAo,spotify:track:1x9iOd3K1JC6tdjGZJpFgZ,spotify:track:0QeI79sp1vS8L3JgpEO7mD,spotify:track:4qan0qNCFAEu6A2hcwPETn,spotify:track:4uNFNCCK5O3mtUJ6gcW9Gx,spotify:track:0hioWv2FDtVePjHFTwgrf7,spotify:track:0LWkaEyQRkF0XAms8Bg1fC,spotify:track:2vytyWClpsahqcL6NibSE3,spotify:track:1jRzdY7oUBOhrylNtiMtBD"
         status = @service.fill_playlist(playlist_id, track_uris, @token)
 
