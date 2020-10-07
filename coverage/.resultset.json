@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/cece/turing/3mod/projects/weather_music2/config/environment.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/config/environment.rb": {
         "lines": [
           1,
           null,
@@ -12,7 +12,7 @@
           1
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/controllers/application_controller.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -77,7 +77,7 @@
           null,
           null,
           1,
-          90,
+          153,
           3,
           3,
           null,
@@ -90,10 +90,6 @@
           null,
           1,
           5,
-          null,
-          null,
-          1,
-          1,
           null,
           null,
           1,
@@ -122,8 +118,6 @@
           null,
           1,
           4,
-          4,
-          4,
           null,
           null,
           1,
@@ -133,10 +127,6 @@
           null,
           null,
           1,
-          4,
-          4,
-          4,
-          4,
           4,
           4,
           4,
@@ -157,15 +147,21 @@
           4,
           4,
           4,
+          4,
+          4,
+          4,
           null,
           null,
           1,
+          4,
+          4,
+          4,
           4,
           null,
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/controllers/weather_music_controller.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/controllers/weather_music_controller.rb": {
         "lines": [
           1,
           1,
@@ -186,7 +182,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/poros/forecast.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/poros/forecast.rb": {
         "lines": [
           1,
           1,
@@ -223,7 +219,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/poros/track.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/poros/track.rb": {
         "lines": [
           1,
           1,
@@ -238,7 +234,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/serializers/playlist_serializer.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/serializers/playlist_serializer.rb": {
         "lines": [
           1,
           null,
@@ -264,7 +260,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/serializers/weather_music_serializer.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/serializers/weather_music_serializer.rb": {
         "lines": [
           1,
           null,
@@ -303,7 +299,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/services/spotify_service.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/services/spotify_service.rb": {
         "lines": [
           1,
           1,
@@ -385,7 +381,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/app/services/weather_service.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/app/services/weather_service.rb": {
         "lines": [
           1,
           1,
@@ -411,7 +407,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/spec/poros/forecast_spec.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/spec/poros/forecast_spec.rb": {
         "lines": [
           1,
           null,
@@ -452,7 +448,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/spec/poros/track_spec.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/spec/poros/track_spec.rb": {
         "lines": [
           1,
           null,
@@ -478,7 +474,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/spec/serializer/playlist_serializer_spec.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/spec/serializer/playlist_serializer_spec.rb": {
         "lines": [
           1,
           null,
@@ -496,7 +492,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/spec/serializer/weather_music_serializer_spec.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/spec/serializer/weather_music_serializer_spec.rb": {
         "lines": [
           1,
           null,
@@ -562,7 +558,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/spec/services/spotify_services_spec.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/spec/services/spotify_services_spec.rb": {
         "lines": [
           1,
           null,
@@ -647,7 +643,7 @@
           null
         ]
       },
-      "/Users/cece/turing/3mod/projects/weather_music2/spec/weather_music_controller_spec.rb": {
+      "/Users/nirupamaram/turing/3module/weather_music2/spec/weather_music_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -660,8 +656,115 @@
           6,
           6,
           null,
+          null,
           1,
           1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           1,
@@ -694,26 +797,6 @@
           1,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -721,119 +804,15 @@
           1,
           1,
           1,
-          null,
           1,
           1,
-          null,
-          null,
-          null,
           1,
           1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1600359876
+    "timestamp": 1600447047
   }
 }

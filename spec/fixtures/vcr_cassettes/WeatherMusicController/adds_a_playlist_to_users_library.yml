@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq/playlists
+    uri: https://api.spotify.com/v1/users/1270051882/playlists
     body:
       encoding: UTF-8
       string: '{"name":"party name","public":false}'
@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQDsKNYViB8eif9EaYLOxfU6D3P54qIuyh6TUdJAP9asvGsUeHZjil5oWg_8WCdDfhT8Ue6nfHVPshD9ft2pRCzO25ZyyR2uvHmf3vSq2yE5gxkDaNoAqBmora8kFXXXmK_XsHUsIZEZthy6-3T6oHVOFafWG6aP1YCIKplJdwFRN1wxvjsD3H3Wl73lI0U4-0j7A4803fjMs8WsWSgDqBuJvOX2ofbpQP755U_dfIJpNtg
+      - Bearer BQDdAPDPDGyotHHjwslG4XY-nJ59bLCmKfYp2SVo6jUz_ItI2lbPGdncNrx6ajcCsO60RnjwA5MPiYNg20Aupr3KmxVW1OVKLJeZaxcjCW2GzSJtXUks4lS6wQ19cMk7BB5WTVj5mdnJ0_981L6zA5CAHlqgACaXdI9MBuhoTkb0IZEXhHYrbBgMUFUQBPODn9u6epU7d6Vl1ApFVWSka5cK-ck
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/2gMkBj7a6X65QNttUrUvUz
+      - https://api.spotify.com/v1/playlists/3EpkGgOImu9iHdNRz1Wge4
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -46,7 +46,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 16:24:36 GMT
+      - Fri, 18 Sep 2020 16:37:27 GMT
       Server:
       - envoy
       Via:
@@ -62,31 +62,31 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/2gMkBj7a6X65QNttUrUvUz"
+            "spotify" : "https://open.spotify.com/playlist/3EpkGgOImu9iHdNRz1Wge4"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/2gMkBj7a6X65QNttUrUvUz",
-          "id" : "2gMkBj7a6X65QNttUrUvUz",
+          "href" : "https://api.spotify.com/v1/playlists/3EpkGgOImu9iHdNRz1Wge4",
+          "id" : "3EpkGgOImu9iHdNRz1Wge4",
           "images" : [ ],
           "name" : "party name",
           "owner" : {
-            "display_name" : "Theawulff",
+            "display_name" : "Neeru Ram",
             "external_urls" : {
-              "spotify" : "https://open.spotify.com/user/bosigp0djzqxoyj6yq6sdzzaq"
+              "spotify" : "https://open.spotify.com/user/1270051882"
             },
-            "href" : "https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq",
-            "id" : "bosigp0djzqxoyj6yq6sdzzaq",
+            "href" : "https://api.spotify.com/v1/users/1270051882",
+            "id" : "1270051882",
             "type" : "user",
-            "uri" : "spotify:user:bosigp0djzqxoyj6yq6sdzzaq"
+            "uri" : "spotify:user:1270051882"
           },
           "primary_color" : null,
           "public" : false,
-          "snapshot_id" : "MSw4NzI5NTZmNzMwNDAwZjM1MzRhMWRjNTQ2ZGQxYmFjNmM4NTU4Yzk1",
+          "snapshot_id" : "MSwzYTY5ZjBlNTAyNmM2ZjkxNTg2MGRmNzgzMWYxMjI5MzQzNzdkYzJl",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/2gMkBj7a6X65QNttUrUvUz/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/3EpkGgOImu9iHdNRz1Wge4/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -95,12 +95,12 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:2gMkBj7a6X65QNttUrUvUz"
+          "uri" : "spotify:playlist:3EpkGgOImu9iHdNRz1Wge4"
         }
-  recorded_at: Thu, 17 Sep 2020 16:24:36 GMT
+  recorded_at: Fri, 18 Sep 2020 16:37:27 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/playlists/2gMkBj7a6X65QNttUrUvUz/tracks?uris=spotify:track:4mYG4iHgfxlPaqfT3BQ0ec,spotify:track:1Bj6YgjjPbEb4jhQ50T8tJ,spotify:track:6qspW4YKycviDFjHBOaqUY,spotify:track:12G1TYIfbpvC0mdFFn4Pbg,spotify:track:6gJdDnF2TzfA1WPMXuCa3x,spotify:track:7sJN693sYKEIEMu7fc5VnJ,spotify:track:2vytyWClpsahqcL6NibSE3,spotify:track:4Yenz5JZZOUiZSeyKY8bDz,spotify:track:3jpaB4JCMidb5XshQtDSGm,spotify:track:7KFThZQCAcj8JXdPRtdrXE,spotify:track:5vWwuFTSoPdyY8rH1mui8W,spotify:track:4o6BgsqLIBViaGVbx5rbRk,spotify:track:24PWKmemCvqfyVXODhoKHW,spotify:track:4O4Z8VFczL8MxIOmqVWc1b,spotify:track:3whRKAOlJ0M3banzcChvQv,spotify:track:4aOjDKk1s5hlsEY5ZhhX3l,spotify:track:5krOROgmf8adn3SJzeKLZy,spotify:track:0qRR9d89hIS0MHRkQ0ejxX,spotify:track:5LxvwujISqiB8vpRYv887S,spotify:track:1GrikfH0jDejDvrxo84n4P
+    uri: https://api.spotify.com/v1/playlists/3EpkGgOImu9iHdNRz1Wge4/tracks?uris=%5B%22spotify:track:4mYG4iHgfxlPaqfT3BQ0ec%22,%20%22spotify:track:1Bj6YgjjPbEb4jhQ50T8tJ%22,%20%22spotify:track:6qspW4YKycviDFjHBOaqUY%22,%20%22spotify:track:12G1TYIfbpvC0mdFFn4Pbg%22,%20%22spotify:track:6gJdDnF2TzfA1WPMXuCa3x%22,%20%22spotify:track:7sJN693sYKEIEMu7fc5VnJ%22,%20%22spotify:track:2vytyWClpsahqcL6NibSE3%22,%20%22spotify:track:4Yenz5JZZOUiZSeyKY8bDz%22,%20%22spotify:track:3jpaB4JCMidb5XshQtDSGm%22,%20%22spotify:track:7KFThZQCAcj8JXdPRtdrXE%22,%20%22spotify:track:5vWwuFTSoPdyY8rH1mui8W%22,%20%22spotify:track:4o6BgsqLIBViaGVbx5rbRk%22,%20%22spotify:track:24PWKmemCvqfyVXODhoKHW%22,%20%22spotify:track:4O4Z8VFczL8MxIOmqVWc1b%22,%20%22spotify:track:3whRKAOlJ0M3banzcChvQv%22,%20%22spotify:track:4aOjDKk1s5hlsEY5ZhhX3l%22,%20%22spotify:track:5krOROgmf8adn3SJzeKLZy%22,%20%22spotify:track:0qRR9d89hIS0MHRkQ0ejxX%22,%20%22spotify:track:5LxvwujISqiB8vpRYv887S%22,%20%22spotify:track:1GrikfH0jDejDvrxo84n4P%22%5D
     body:
       encoding: UTF-8
       string: ''
@@ -110,7 +110,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQDsKNYViB8eif9EaYLOxfU6D3P54qIuyh6TUdJAP9asvGsUeHZjil5oWg_8WCdDfhT8Ue6nfHVPshD9ft2pRCzO25ZyyR2uvHmf3vSq2yE5gxkDaNoAqBmora8kFXXXmK_XsHUsIZEZthy6-3T6oHVOFafWG6aP1YCIKplJdwFRN1wxvjsD3H3Wl73lI0U4-0j7A4803fjMs8WsWSgDqBuJvOX2ofbpQP755U_dfIJpNtg
+      - Bearer BQDdAPDPDGyotHHjwslG4XY-nJ59bLCmKfYp2SVo6jUz_ItI2lbPGdncNrx6ajcCsO60RnjwA5MPiYNg20Aupr3KmxVW1OVKLJeZaxcjCW2GzSJtXUks4lS6wQ19cMk7BB5WTVj5mdnJ0_981L6zA5CAHlqgACaXdI9MBuhoTkb0IZEXhHYrbBgMUFUQBPODn9u6epU7d6Vl1ApFVWSka5cK-ck
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -119,8 +119,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 400
+      message: Bad Request
     headers:
       Content-Type:
       - application/json; charset=utf-8
@@ -144,7 +144,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 16:24:36 GMT
+      - Fri, 18 Sep 2020 16:37:27 GMT
       Server:
       - envoy
       Via:
@@ -157,12 +157,15 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "snapshot_id" : "MixiNGQ5MWQwN2VjZmFjMWIzYjA1NGYxYTM5MWU2NTM3ODMzMGUzYTgz"
+          "error" : {
+            "status" : 400,
+            "message" : "Invalid track uri: [\"spotify:track:4mYG4iHgfxlPaqfT3BQ0ec\""
+          }
         }
-  recorded_at: Thu, 17 Sep 2020 16:24:36 GMT
+  recorded_at: Fri, 18 Sep 2020 16:37:27 GMT
 - request:
     method: post
-    uri: https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq/playlists
+    uri: https://api.spotify.com/v1/users/1270051882/playlists
     body:
       encoding: UTF-8
       string: '{"name":"party name","public":false}'
@@ -172,7 +175,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Bearer BQDsKNYViB8eif9EaYLOxfU6D3P54qIuyh6TUdJAP9asvGsUeHZjil5oWg_8WCdDfhT8Ue6nfHVPshD9ft2pRCzO25ZyyR2uvHmf3vSq2yE5gxkDaNoAqBmora8kFXXXmK_XsHUsIZEZthy6-3T6oHVOFafWG6aP1YCIKplJdwFRN1wxvjsD3H3Wl73lI0U4-0j7A4803fjMs8WsWSgDqBuJvOX2ofbpQP755U_dfIJpNtg
+      - Bearer BQDdAPDPDGyotHHjwslG4XY-nJ59bLCmKfYp2SVo6jUz_ItI2lbPGdncNrx6ajcCsO60RnjwA5MPiYNg20Aupr3KmxVW1OVKLJeZaxcjCW2GzSJtXUks4lS6wQ19cMk7BB5WTVj5mdnJ0_981L6zA5CAHlqgACaXdI9MBuhoTkb0IZEXhHYrbBgMUFUQBPODn9u6epU7d6Vl1ApFVWSka5cK-ck
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -187,7 +190,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0
       Location:
-      - https://api.spotify.com/v1/playlists/42BKPwz3Gs0ZgjcnYd2Yc8
+      - https://api.spotify.com/v1/playlists/75I4DYRV2US7LkWRGpcGMu
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -206,7 +209,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Thu, 17 Sep 2020 16:24:36 GMT
+      - Fri, 18 Sep 2020 16:37:28 GMT
       Server:
       - envoy
       Via:
@@ -222,31 +225,31 @@ http_interactions:
           "collaborative" : false,
           "description" : null,
           "external_urls" : {
-            "spotify" : "https://open.spotify.com/playlist/42BKPwz3Gs0ZgjcnYd2Yc8"
+            "spotify" : "https://open.spotify.com/playlist/75I4DYRV2US7LkWRGpcGMu"
           },
           "followers" : {
             "href" : null,
             "total" : 0
           },
-          "href" : "https://api.spotify.com/v1/playlists/42BKPwz3Gs0ZgjcnYd2Yc8",
-          "id" : "42BKPwz3Gs0ZgjcnYd2Yc8",
+          "href" : "https://api.spotify.com/v1/playlists/75I4DYRV2US7LkWRGpcGMu",
+          "id" : "75I4DYRV2US7LkWRGpcGMu",
           "images" : [ ],
           "name" : "party name",
           "owner" : {
-            "display_name" : "Theawulff",
+            "display_name" : "Neeru Ram",
             "external_urls" : {
-              "spotify" : "https://open.spotify.com/user/bosigp0djzqxoyj6yq6sdzzaq"
+              "spotify" : "https://open.spotify.com/user/1270051882"
             },
-            "href" : "https://api.spotify.com/v1/users/bosigp0djzqxoyj6yq6sdzzaq",
-            "id" : "bosigp0djzqxoyj6yq6sdzzaq",
+            "href" : "https://api.spotify.com/v1/users/1270051882",
+            "id" : "1270051882",
             "type" : "user",
-            "uri" : "spotify:user:bosigp0djzqxoyj6yq6sdzzaq"
+            "uri" : "spotify:user:1270051882"
           },
           "primary_color" : null,
           "public" : false,
-          "snapshot_id" : "MSxkODhjZjk4OTIzZjIzYjkxYzBhN2FkMTk1YzE3OTZjNDE3MjdiMzRi",
+          "snapshot_id" : "MSwwYTVlYzA3OGNkZWVhNGY3MDhhOTcwNjkyZjRmNjA5YWIzZjMxNmU5",
           "tracks" : {
-            "href" : "https://api.spotify.com/v1/playlists/42BKPwz3Gs0ZgjcnYd2Yc8/tracks",
+            "href" : "https://api.spotify.com/v1/playlists/75I4DYRV2US7LkWRGpcGMu/tracks",
             "items" : [ ],
             "limit" : 100,
             "next" : null,
@@ -255,7 +258,7 @@ http_interactions:
             "total" : 0
           },
           "type" : "playlist",
-          "uri" : "spotify:playlist:42BKPwz3Gs0ZgjcnYd2Yc8"
+          "uri" : "spotify:playlist:75I4DYRV2US7LkWRGpcGMu"
         }
-  recorded_at: Thu, 17 Sep 2020 16:24:36 GMT
+  recorded_at: Fri, 18 Sep 2020 16:37:27 GMT
 recorded_with: VCR 6.0.0
