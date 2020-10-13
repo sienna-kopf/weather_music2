@@ -45,8 +45,8 @@ The `weather_music2` application is fully tested using RSpec reporting ~100% tes
 
 ## Authors:
 
-[Sienna Kopf](https://github.com/sienna-kopf)
-[Neeru Ram](https://github.com/neeruram1)        
-[Ashkan Abbasi](https://github.com/ashkanthegreat)   
-[Joshua Tukman](https://github.com/joshua-tukman)
+[Sienna Kopf](https://github.com/sienna-kopf)</br>
+[Neeru Ram](https://github.com/neeruram1)   </br>     
+[Ashkan Abbasi](https://github.com/ashkanthegreat)   </br>
+[Joshua Tukman](https://github.com/joshua-tukman)</br>
 
