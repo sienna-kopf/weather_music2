@@ -1,7 +1,7 @@
 # Weather_Music2
 
 ## About: 
-Sinatra micro-service to handle API calls and data synthesis for the user facing Ruby on Rails application, [WeatherBop](https://github.com/neeruram1/weatherbop). Part of an 11- day sprint from project inception to completion. All goals for the functionality of this application were met by the deadline! </br>
+Sinatra micro-service to handle API calls and data synthesis for the user facing Ruby on Rails application, [WeatherBop](https://github.com/neeruram1/weatherbop). Part of an 11- day sprint from project inception to completion. All goals for the functionality of this application were met by the deadline! It's deployed [here](https://weather-bop.herokuapp.com/) on Herokuapp -- go give it a try!</br>
 
 From a user inputted location, this application retrieves specific weather data and associates the present weather attributes to track audio attributes in order to return a curated list of tracks. This application also handles playlist creation functionality in which the recommended tracks are aggregated into a cleverly named playlist in the users Spotify library. 
 - weather data retrieved from the Open Weather API 
